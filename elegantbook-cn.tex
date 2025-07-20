@@ -1,4 +1,9 @@
 \documentclass[lang=cn, 10pt, titlestyle=hang]{elegantbook}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\renewcommand{\theequation}{\Roman{equation}}
 
 \title{九年级数学讲义（人教版）}
 
@@ -24,20 +29,67 @@
 经过本章的学习，你至少需要掌握以上的内容，在完成学习后你可以根据习题的情况，对照上面的学习目标，检验自己的学习成果.
 
 \section{一元二次方程基本}
-\subsection{一元二次方程一般式转化}
+\subsection{一元二次方程的定义}
+
+
+\begin{definition}
+  
 等号两边都是整式，只含一个未知数，并且未知数的最高次数是2的方程，叫做一元二次方程. 以下是二元一次方程的一般形式：
 
-$$
-ax^2 + bx + c = 0 \ (a \neq 0)
-$$
+\begin{equation}
+    ax^2 + bx + c = 0 \ (a \neq 0)
+    \label{general_formula}
+\end{equation}
+
+ 
+\end{definition}
 
 
 
-我们将$ax^2$称为二次项（未知数的次数为2），a是二次项的系数；$bx$称为一次项（未知数的次数为1），\\ $b$是一次项系数；$c$称为常数项.
+根据课本的定义，要构成一个一元二次方程必须具有三个条件：
+\begin{enumerate}
+    \item 是整式方程
+    \item 只含有一个未知数
+    \item 未知数的最高次数为2
+\end{enumerate}
+\par
+%定义例题
+\begin{example}
+    下列关于 \( x \) 的方程中，一定是一元二次方程的为（{\hspace{3.5em}}）。
+    \begin{enumerate}[label=\Alph*.]
+        \item \( x^2 + 2xy + y^2 = 0 \)
+        \item \( x^2 - 2x + 3 = 0 \)
+        \item \( x^2 - \frac{1}{x} = 0 \)
+        \item \( ax^2 + bx + c = 0 \)
+    \end{enumerate}
+\end{example}
 
 
 
-$x$的值就是这个一元二次方程的解，$x$的值也可以被称作这个一元二次方程的根，在做题时，有时会把$x$的值称做方程的解，有时称作方程的根，其实这两种说法都是一个意思.
+\begin{solution}
+    阅读题目，要我们选出一定是一元二次方程的方程，需要结合一元二次方程的定义来解题，看每个选项是否符合一元二次方程必须具有的三个条件.
+    \begin{enumerate}[label=\Alph*.]
+        \item 是整式方程，未知数的最高次数为2，但含有两个未知数（\(x,y\)），所以错误.
+        \item 是整式方程，只含有一个未知数，未知数的最高次数为2，满足所有条件所以正确.选择B.
+        \item 未知数的最高次数为2，之含有一个未知数，但是是分式方程（分母含有未知数），所以错误.
+        \item 是整式方程，未知数的最高次数为2，但是a的取值无法确定，当\(a=0\)时，方程中的未知数的最高次数为1，不一定是一元二次方程，因为题目要求“一定是”，所以错误.
+    \end{enumerate}
+\end{solution}
+
+
+\begin{definition}
+    我们将\eqref{general_formula}中的$ax^2$称为二次项（未知数的次数为2），a是二次项的系数；$bx$称为一次项（未知数的次数为1），$b$是一次项系数；$c$称为常数项.
+\end{definition}
+\begin{definition}
+    $x$的值就是这个一元二次方程的解，也可以称作这个一元二次方程的根.\\
+    \begin{remark}
+        在做题时，有时会把$x$的值称做方程的解，有时称作方程的根，其实这都是一个意思.
+    \end{remark}
+\end{definition}
+
+
+
+
 
 \subsection{一元二次方程一般式转化}
 
@@ -55,7 +107,6 @@ $），这样做可以减少我们的工作量和出错的概率，便于进行�
 
 \subsection{判定一元二次方程}
 
-在1.1中我们学习了一元二次方程的定义，在1.2中我们学习了如何整理一元二次方程，上面的两节课虽然简单，却是本章最重要的内容，下面是测试题，可以用较短时间完成，如果你还未掌握，请回看前面的两节课再继续.
 
 
 
@@ -69,15 +120,17 @@ $），这样做可以减少我们的工作量和出错的概率，便于进行�
 \end{enumerate}
 
 
-\begin{problemset}[1.1-1.3习题]
-    \item 下列关于 \( x \) 的方程中，是一元二次方程的为（{\hspace{3em}}）。
-    \begin{enumerate}[label=\Alph*.]
-        \item \( x^2 + \frac{1}{x} = 0 \)
-        \item \( x^2 - xy = 0 \)
-        \item \( x^2 + 2x = 1 \)
-        \item \( ax^2 + bx = 0 \) (\( a, b \) 为常数)
+\begin{exercise}
+    \begin{enumerate}
+        \item 下列关于 \( x \) 的方程中，是一元二次方程的为（{\hspace{3em}}）。
+        \begin{enumerate}[label=\Alph*.]
+            \item \( x^2 + \frac{1}{x} = 0 \)
+            \item \( x^2 - xy = 0 \)
+            \item \( x^2 + 2x = 1 \)
+            \item \( ax^2 + bx = 0 \) (\( a, b \) 为常数)
+        \end{enumerate}
     \end{enumerate}
-\end{problemset}
+\end{exercise}
 
 \section{配方}
 
@@ -128,6 +181,26 @@ $$
 \chapter{二次函数}
 
 \chapter{旋转}
+
+\section{旋转基本}
+
+\subsection{旋转的性质}
+
+我们把一个平面图形绕着平面内某一点\(O \)转动一个角度，叫做图形的旋转，点\(O \)叫做旋转中心，转动的角叫做旋转角 . 如果图形上的点\(P \)经过旋转变为点\(P' \)，那么这两个点叫做这个旋转的对应点.
+
+\begin{example}
+    如下图，在\(Rt\triangle ABC \)中，\(\angle ABC = 90^\circ \)，\(AB=BC=\sqrt{2}\),将\(\triangle ABC\)绕点\(C\)逆时针旋转\(60^\circ\)，得到\(\triangle MNC\)，连接\(BM\)，则\(BM\)的长是 \underline{\hspace{3em}}
+    
+\begin{figure}[h]
+    \raggedright
+    \includegraphics[width=0.25\linewidth]{figure/example_rotation1.jpg}
+    
+    \label{fig:enter-label}
+\end{figure}
+    
+\end{example}
+
+
 
 \chapter{圆}
 
