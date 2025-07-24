@@ -441,6 +441,8 @@ x &= -1 \pm \frac{\sqrt{6}}{2}\\
 \intertext{6. 分别写出两个解：}
 x_1=-1 + \frac{\sqrt{6}}{2},\ x_2=-1 - \frac{\sqrt{6}}{2}
 \end{align*}
+
+
 \end{solution}
 通过这道比较全面的例题，我们可以得出详细的使用配方法解二元一次方程的步骤，步骤看似很多实际上在1.2经过充分练习后你应该能熟练掌握配方的步骤：
 \begin{enumerate}
@@ -557,38 +559,91 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
     x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 &= -\frac{c}{a} + \left(\frac{b}{2a}\right)^2 \quad \text{(配方)} \\
     \left(x + \frac{b}{2a}\right)^2 &= \frac{b^2}{4a^2} - \frac{c}{a}\\
     \left(x + \frac{b}{2a}\right)^2 &= \frac{b^2 - 4ac}{4a^2}\\
-    x + \frac{b}{2a} &= \pm \frac{\sqrt{b^2 - 4ac}}{2a} \quad \text{(开平方)} \\
-    x &= -\frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}\\
-    x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+    %|x + \frac{b}{2a}| &= \frac{\sqrt{b^2 - 4ac}}{2a}
 \end{align*}
-
-\begin{itemize}
-    \item 由于 \(\sqrt{\Delta}\) 是正实数，且 \(\sqrt{\Delta} \neq 0\)
-    \item 公式中“\(\pm\)”产生两个不同的实数值：
-    \[
-    x_1 = \frac{-b + \sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b - \sqrt{\Delta}}{2a}
-    \]
-    \item 因为 \(\sqrt{\Delta} > 0\)，显然 \(x_1 \neq x_2\)
-\end{itemize}
-
-\begin{itemize}
-    \item 此时 \(\sqrt{\Delta} = 0\)，公式退化为：
-    \[
-    x = \frac{-b \pm 0}{2a} = -\frac{b}{2a}
-    \]
-    \item 两个根完全重合，称为“重根”
-    \item 几何意义：抛物线与\(x\)轴相切
-\end{itemize}
-
-\begin{itemize}
-    \item 在实数范围内 \(\sqrt{\Delta}\) 无根
-\end{itemize}
 \end{proof}
+因为\(a\ne0\)，所以\(4a^2\ne0\)，但在开方降次前还要考虑到判别式\(\Delta\)（\(b^2 - 4ac\)）的值会影响到根的结果，因此需要分别讨论判别式的取值情况.
+\begin{enumerate}
+    \item 当\(\Delta>0\)时，
+    \begin{align*}
+        x_1 = \frac{-b + \sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b - \sqrt{\Delta}}{2a}\\
+    \end{align*}
+    $\therefore \text{有两个不相等的实数根}$
+    \item 当\(\Delta=0\)时，
+    \begin{align*}
+         x &= \frac{-b \pm 0}{2a}\\
+    &= -\frac{b}{2a}\\
+    \end{align*}
+    $\therefore \text{有两个不相等的实数根即重根}$
+    \item 当\(\Delta<0\)时，因为\(b^2 - 4ac<0\)此时\(\dfrac{b^2 - 4ac}{4a^2}<0\)，相当于\((x + \dfrac{b}{2a})^2<0\)，此时\(x\)取任何实数都不能使得\((x + \dfrac{b}{2a})^2<0\)，所以原方程无实数根.
+
+\end{enumerate}
+\par
+由于判别式值的不同导致了\(x\)的结果不同，所以在每次使用求根公式解一元二次方程的时候都需要先计算判别式的值，再代入不同情况的公式，下面通过例题学习使用求根公式解方程的过程
+\begin{example}
+    用公式法解方程：(1)\( 2x^2 - 4x + 2 = 0 \)，(2)\( x^2 + 2x + 3 = 0 \) (3)\( 2x^2 - 5x + 2 = 0 \)
+\end{example}
+\begin{multicols}{2}
+\begin{solution}
+(1)
+    \begin{align*}
+\intertext{1. 确定系数：} 
+a = 2,\ b = -4,\ c = 2. \\
+\intertext{2. 计算判别式：}
+\Delta = b^2 - 4ac = (-4)^2 - 4 \times 2 \times 2 = 16 - 16 = 0. \\
+\intertext{3. 代入求根公式：}
+x = -\frac{b}{2a} = -\frac{-4}{4} = \frac{4}{4}. \\
+\intertext{4. 求得重根：}
+x_1=x_2 = 1.
+\end{align*}
+(2)
+\begin{align*}
+a &= 1, \quad b = 2, \quad c = 2, \\
+\Delta &= b^2 - 4ac \\
+  &= (2)^2 - 4 \times 1 \times 2 \\
+  &= 4 - 8 \\
+  &= -4.\\
+&\because \Delta<0\\
+&\therefore \text{原方程无实数根}
+\end{align*}
+\begin{minipage}{1\linewidth}
+(3)
+\begin{align*}
+a &= 2, \quad b = -5, \quad c = 2, \\
+\Delta &= b^2 - 4ac \\
+  &= (-5)^2 - 4 \times 2 \times 2 \\
+  &= 25 - 16 \\
+  &= 9, \\
+x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+  &= \frac{-(-5) \pm \sqrt{9}}{2 \times 2} \\
+  &= \frac{5 \pm 3}{4}, \\
+x_1 &= \frac{5 + 3}{4} = 2, \ 
+x_2 = \frac{5 - 3}{4} = \frac{1}{2}.
+\end{align*}
+\end{minipage}
 
 
-\subsubsection{根的判别式}
+\end{solution}
 
-通过判别式\(\Delta \)（\(\Delta \)音标：['deltə]）我们可以判断根的情况，抓住这一点可以解决一些求参问题
+通过例题，我们可以得出使用求根公式解二元一次方程的步骤：
+\begin{enumerate}
+    \item 列出二次项系数、一次项系数、常数项
+    \item 计算判别式的值判断根的情况
+    \item 使用对应公式
+\end{enumerate}
+\par
+
+\begin{exercise}
+    用公式法解下列方程：
+\end{exercise}
+
+\end{multicols}
+
+前面我们用根的判别式(\(\Delta\))判断方程根的情况后解方程，还可以运用根的判别式解决含参问题、探究根与系数的关系.
+
+
+\subsubsection{韦达定理（根与系数的关系）}
+
 
 
 \subsection{因式分解法}
@@ -598,9 +653,7 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \subsubsection{因式分解-十字相乘法}
 
 
-\section{韦达定理（根与系数的关系）}
-
-\section{综合练习（1.1-1.4）}
+\section{综合练习（1.1-1.3）}
 
 \section{一元二次方程与实际问题}
 
@@ -608,7 +661,7 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 
 \section{有关一元二次方程的新定义}
 
-\section{综合练习（1.6-1.8）}
+\section{综合练习（1.5-1.7）}
 
 \chapter{二次函数}
 
