@@ -384,12 +384,14 @@ x^2 + 4x + 2 &= x^2 + 4x + 4 - 4 + 2 \\
         \end{minipage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%还有习题没编完，参考5星学霸第六页
         \begin{minipage}{1\linewidth}
-        (3)已知方程 $(x^2-9)(x+2) = (x-3)^3 + k$ 的常数项为0，求k的值.
+        (3)\(-x^2+4x-7\)的最小值是\underline{\hspace{3.5em}}，此时\(x=\)\underline{\hspace{3.5em}}
         \end{minipage}
 
         \begin{minipage}{1\linewidth}
-        (4)关于$x$的一元二次方程\(2(x-1)^2+b(x-1)+c=0\)化为一般形式后为\(2x^2-3x-1=0\)，求\(b,c\)的值.
+        (4)若\(W=5x^2-4xy+y^2-2y+8x+3(x,y\text{为实数})，\text{则}W\)的最小值为\underline{\hspace{3.5em}}
         \end{minipage}
+
+        (5)已知\(M=x^2+2y^2, N=2xy+y-m\)，当\(M>N\)恒成立时，求\(m\)的取值范围.
         
     \end{multicols}
 \end{exercise}
@@ -478,7 +480,7 @@ x_1=-1 + \frac{\sqrt{6}}{2},\ x_2=-1 - \frac{\sqrt{6}}{2}
     \item 当\(p<0\)时，因为对于任何实数\(x\)，都有\((x+n)^2\ge0\)而\(p<0\)，所以无实数根.
 
 \end{enumerate}
-根据上面的推导，我们就能够判断根的情况当（\(p\ge0\)）时开方降次，在\(p<0\)时直接写“原方程无实数根”即可，下面以为例：
+根据上面的推导，我们就能够判断根的情况当（\(p\ge0\)）时开方降次，在\(p<0\)时直接写“原方程无实数根”即可，下面以\( x^2 - 6x = -9 \)和\( x^2 + 4x + 5 = 0 \)为例：
 \par
 \begin{example}
     解关于\(x\)的一元二次方程：(1)\( x^2 - 6x = -9 \)，(2)\( x^2 + 4x + 5 = 0 \)
@@ -508,11 +510,81 @@ x_1=-1 + \frac{\sqrt{6}}{2},\ x_2=-1 - \frac{\sqrt{6}}{2}
     \end{minipage}
     \end{multicols}
 \end{solution}
+%theorem、lemma、corollary、axiom、postulate
+\begin{exercise}
+\small
+    \setlength{\parindent}{0pt} % 取消段落缩进
+    \setlength{\columnseprule}{0.01pt}
+    \begin{multicols}{2}
+        用配方法解下列方程\\
+        (1)\(x^2+4x+4=0\)\\
+        (2)\(x^2-6x+7\)\\
+        (3)\(3x^2-12x=-12\)\\
+        (4)\(2x^2+4x-5=0\)\\
+        (5)\(2x^2-3x+1=0\)\\
+        (6)\(2x^2-6x-9=0\)\\
+        (7)\(2x^2-7x=2\)\\
+        (8)\(x(x-4)=2-8x\)\\
+        (9)\(x^2+5x+3\)\\
+    \end{multicols}
+\end{exercise}
+
+
+
 \subsection{求根公式法}
 
 
 
 将配方法用在一元二次方程的一般形式上，我们可以得到求根公式.
+\begin{theorem}[一元二次方程求根公式]
+对于任意一元二次方程 $ax^2 + bx + c = 0$（$a \neq 0$），其解为：
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]
+其中 $b^2 - 4ac$ 称为判别式（$\Delta$），根的性质取决于判别式的值：
+\begin{itemize}
+    \item 当 $\Delta > 0$ 时，方程有两个不相等的实数根；
+    \item 当 $\Delta = 0$ 时，方程有两个相等的实数根（重根）；
+    \item 当 $\Delta < 0$ 时，方程有一对共轭复数根。
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+通过配方法推导如下：
+\begin{align*}
+    x^2 + \frac{b}{a}x + \frac{c}{a} &= 0\\
+    x^2 + \frac{b}{a}x &= -\frac{c}{a}\\
+    x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 &= -\frac{c}{a} + \left(\frac{b}{2a}\right)^2 \quad \text{(配方)} \\
+    \left(x + \frac{b}{2a}\right)^2 &= \frac{b^2}{4a^2} - \frac{c}{a}\\
+    \left(x + \frac{b}{2a}\right)^2 &= \frac{b^2 - 4ac}{4a^2}\\
+    x + \frac{b}{2a} &= \pm \frac{\sqrt{b^2 - 4ac}}{2a} \quad \text{(开平方)} \\
+    x &= -\frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}\\
+    x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{align*}
+
+\begin{itemize}
+    \item 由于 \(\sqrt{\Delta}\) 是正实数，且 \(\sqrt{\Delta} \neq 0\)
+    \item 公式中“\(\pm\)”产生两个不同的实数值：
+    \[
+    x_1 = \frac{-b + \sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b - \sqrt{\Delta}}{2a}
+    \]
+    \item 因为 \(\sqrt{\Delta} > 0\)，显然 \(x_1 \neq x_2\)
+\end{itemize}
+
+\begin{itemize}
+    \item 此时 \(\sqrt{\Delta} = 0\)，公式退化为：
+    \[
+    x = \frac{-b \pm 0}{2a} = -\frac{b}{2a}
+    \]
+    \item 两个根完全重合，称为“重根”
+    \item 几何意义：抛物线与\(x\)轴相切
+\end{itemize}
+
+\begin{itemize}
+    \item 在实数范围内 \(\sqrt{\Delta}\) 无根
+\end{itemize}
+\end{proof}
+
 
 \subsubsection{根的判别式}
 
