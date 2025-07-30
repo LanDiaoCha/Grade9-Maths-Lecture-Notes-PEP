@@ -1,4 +1,4 @@
-\documentclass[lang=cn, 10pt, titlestyle=hang, oneside]{elegantbook}
+\documentclass[lang=cn, 10pt, titlestyle=display, oneside]{elegantbook}
 \usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{pgfplots}
@@ -8,10 +8,14 @@
 \tcbuselibrary{skins}
 \usepackage{xcolor}
 \usepackage{enumitem} % 提供 inline 列表
-
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 \usepackage{etoolbox}
-\title{九年级数学讲义（人教版）}
+\usepackage{amsmath}  % 提供数学公式支持
+\usepackage{array}    % 提供更强大的表格功能
 
+
+\title{九年级数学讲义（人教版）}
 
 
 
@@ -19,7 +23,61 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+
+\chapter*{前言}
+
+\section*{说明}
+
+讲义根据改版前的人教数学课本编写，所有内容都在中考范围内，编者在广东参加中考所以优先考虑的是广东中考情况，可以说大部分知识点讲义里面都有讲解，章节和内容的编排都为了学习思路服务，没有区分重点和非重点（因为都需要好好掌握），也没有区分难易（但是大部分内容都做了详细讲解，适合大部分学生学习），编者对部分内容做了重新编排、补充，应该能让读者获得更顺畅的学习体验.
+
+\section*{更新维护/反馈建议}
+
+尽量快地更新讲义，讲解视频会随后更新，比讲义慢. 编者不定期修订讲义，如果你发现了错误或者建议请联系我勘误及修订（不更新新版教材内容），非常感谢！
+
+
+\section*{获取配套资料}
+
+\begin{enumerate}
+    \item 讲义所有练习题目（有答题空间）+解析
+\end{enumerate}
+
+
+\section*{其他}
+
+本讲义已经开源（地址：https://github.com/LanDiaoCha/Grade9-Maths-Lecture-Notes-PEP?tab=BSD-3-Clause-1-ov-file），请遵守协议内容，共同维护开源社区：禁止删除或修改原始版权声明和许可证文本、禁止未经许可使用版权所有者名称进行背书、禁止移除免责声明.
+\par
+BSD 3-Clause License
+
+Copyright (c) 2025, 蓝调茶
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 \tableofcontents
+
+
 
 \chapter{一元二次方程}
 
@@ -59,7 +117,7 @@
 
 根据课本的定义，要构成一个一元二次方程必须具有三个条件：
 \begin{enumerate}
-    \item 是整式方程
+    \item 是整式方程（不能是分式方程）
     \item 只含有一个未知数
     \item 未知数的最高次数为2
 \end{enumerate}
@@ -71,6 +129,9 @@
 \par
 我们将\eqref{general_formula}中的$ax^2$称为二次项（未知数的次数为2），a是二次项的系数；$bx$称为一次项（未知数的次数为1），$b$是一次项系数；$c$称为常数项.
 \par
+\begin{remark}
+    如果一个一元二次方程没有一次项或者常数项，那么说它的一次项为0，一次项系数为0，常数项为0
+\end{remark}
 %结构命名例题
 \begin{example}
     分别写出下列方程的二次项系数、一次项系数和常数项
@@ -91,7 +152,7 @@
 \end{solution}
 $x$的值就是这个一元二次方程的解，也可以称作这个一元二次方程的根.
 \begin{remark}
-    在做题时，有时会把$x$的值称做方程的解，有时称作方程的根，可以理解为是同一个意思\footnote{但准确来说解是使方程成立的未知数的取值，根是使多项式为0的数，在初中这两个概念不做区分.}
+    在做题时，有时会把$x$的值称做方程的解，有时称作方程的根，可以理解为是同一个意思\footnote{但准确来说解是使方程成立的未知数的取值，根是使多项式为0的数，在初中阶段这两个概念不做区分.}
 \end{remark}
 
 
@@ -174,7 +235,7 @@ $）
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %判定例题1
 \begin{example}
-    下列关于 \( x \) 的方程中，一定是一元二次方程的为（{\hspace{3.5em}}）.
+    下列关于 \( x \) 的方程中，一定是一元二次方程的为（{\hspace{3em}}）.
     \begin{enumerate}[label=\Alph*.]
         \item \( x^2 + 2xy + y^2 = 0 \)
         \item \( x^2 - 2x + 3 = 0 \)
@@ -198,7 +259,7 @@ $）
 \end{example}
 \par
 \begin{solution}
-    分析：阅读题目，先判断何时为一元二次方程. 这个方程中只需要确定$(m^2 - 4)$不等于0即可使方程是二元一次方程，所以列不等式$(m^2 - 4)\ne0$确定取值范围，然后填空. 再判断何时为一元一次方程，需要列$(m^2 - 4)=0$消除二次项使方程符合未知数最高次数为1的条件，还需要使一次项系数不等于0，由此列$(m-2)\ne 0$，最后综合答案填空，解答如下：
+    分析：阅读题目，先判断何时为一元二次方程. 这个方程中只需要确定$(m^2 - 4)$不等于0即可使方程是一元二次方程，所以列不等式$(m^2 - 4)\ne0$确定取值范围，然后填空. 再判断何时为一元一次方程，需要列$(m^2 - 4)=0$消除二次项使方程符合未知数最高次数为1的条件，还需要使一次项系数不等于0，由此列$(m-2)\ne 0$，最后综合答案填空，解答如下：
     
     一元二次方程条件：
     \[
@@ -265,7 +326,7 @@ $）
     完全平方是指一个数或代数式可以表示为另一个数或代数式的平方，例如\( 1=1^2,\ 4=2^2,\ \)（这些是数的完全平方）\(x^2+6x+9=(x+3)^2,\ 4x^2-12xy+9y^2=(2x-3y)^2\)等等.
 \end{remark}
 \par
-在八年级我们学习过完全平方公式\(a^2+b^2\pm2ab=(a\pm b)^2\)来因式分解，这个公式本质上就是在配方. 但并不是所有式子都能使用这个公式来配方，例如\(x^2+2x\)就没有办法直接套用公式，面对这种情况就需要使用配方法来转化为一个有完全平方的式子，下面就用\(x^2+2x\)作为配方示范：
+在八年级我们学习过完全平方公式\(a^2+b^2\pm2ab=(a\pm b)^2\)来因式分解，这个公式本质上就是在配方. 但并不是所有式子都能使用这个公式来配方，例如\(x^2+2x\)就没有办法直接套用公式，面对这种情况就需要使用配方法来转化为一个有完全平方的式子，形如\(a(x+h)^2+k\)，下面就用\(x^2+2x\)作为配方示范：
 \begin{example}
 给\(x^2+2x\)配方
 \end{example}
@@ -289,7 +350,10 @@ $）
             &= (x^2 + 2x + 1) - 1
   \end{align*}
   
-  \item 重组为完全平方式，前三项恰好是 \(x\) 和 \(1\) 的完全平方：
+  \item 重组为完全平方式，前三项恰好是 \(x\) 和 \(1\) 的完全平方
+  \begin{remark}
+  将$1^2$移出括号不能忘记乘上括号前的系数1）
+  \end{remark}
   \[
   = (x + 1)^2-1
   \]
@@ -316,7 +380,10 @@ $）
     &=2\left[\left(x + \frac{3}{2}\right)^2 - \frac{9}{4}\right] + 1
     \end{align*}
 
-    \item 展开并合并常数项：
+    \item 展开并合并常数项
+    \begin{remark}
+    将\(\frac{4}{9}\)移出括号不能忘记乘上提取的系数）
+    \end{remark}
     \begin{align*}
     &=2\left(x + \frac{3}{2}\right)^2 - \frac{9}{2} + 1 \\
     &= 2\left(x + \frac{3}{2}\right)^2 - \frac{7}{2}
@@ -336,18 +403,20 @@ $）
 \begin{enumerate}
     \item 把平方项（二次项）系数化为1
     \item 同时增加和减少一次项系数的一半的平方
-    \item 将要配的三项写成完全平方形式
+    \item 将要配的三项写成完全平方形式（把要减去的项提出来时要乘上括号前的系数）
     \item 整理式子成一般形式：\( a(x + h)^2 + k \)
 \end{enumerate}
 \par
-配方不仅能够因式分解，还可以解决一些其他的数学问题，例如配方得到式子的极值，配方后开方降次解一元二次方程. 这一节先讲用配方得到式子的极值
+配方不仅能够因式分解，还可以解决一些其他的数学问题，例如配方得到多项式的极值，配方后开方降次解一元二次方程. 这一节先讲用配方得到式子的极值
 \par
 由于平方具有非负性，也就是说\(a^2\geq0\)，且\(a=0\)时，\(a^2\)的最小值为0，根据这一点，
 当二次多项式配方为 \( a(x + h)^2 + k \) 时，因为 \( (x + h)^2 \geq 0 \)，所以：
+\newline
 \begin{itemize}[label=]
     \item 如果 \( a > 0 \)，多项式的最小值为 \( k \)（当 \( x = -h \) 时取得）；
     \item 如果 \( a < 0 \)，多项式的最大值为 \( k \)（当 \( x = -h \) 时取得）.
 \end{itemize}
+
 \begin{example}
 若\(x\)为任意实数，求代数式\(x^2+4x+2\)的最小值
 \end{example}
@@ -446,7 +515,7 @@ x_1=-1 + \frac{\sqrt{6}}{2},\ x_2=-1 - \frac{\sqrt{6}}{2}
 
 
 \end{solution}
-通过这道比较全面的例题，我们可以得出详细的使用配方法解二元一次方程的步骤，步骤看似很多实际上在1.2经过充分练习后你应该能熟练掌握配方的步骤：
+通过这道例题，我们可以得出使用配方法解一元二次方程的步骤，步骤看似很多实际上在1.2经过充分练习后你应该能熟练掌握配方的步骤：
 \begin{enumerate}
     \item 整理为一般形式，常数项移到等式右边
     \item 配方
@@ -583,7 +652,7 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 我们称\(b^2 - 4ac\)为判别式\(\Delta\)，判别式的主要作用是判断根的情况（三种情况是有两个不相等的实数根、有两个相等的实数根和无实数根）
 \par
 \begin{remark}
-注意与之前的知识做区分：前面提到过二元一次方程一般形式中\(a\ne0\)的作用是保证方程未知数的最高次数为2（保证方程是二次方程），而这里的判别式是用于判断方程的根的情况，不要混淆使用. 
+注意与之前的知识做区分：前面提到过 一元二次方程一般形式中\(a\ne0\)的作用是保证方程未知数的最高次数为2（保证方程是二次方程），而这里的判别式是用于判断方程的根的情况，不要混淆使用. 
 \end{remark}
 \par
 如果我们知道方程的系数就可以使用判别式推导出根的情况，如果我们知道根的情况和部分系数通过判别式我们可以推导出方程中其他的系数.
@@ -649,7 +718,7 @@ x_2 = \frac{5 - 3}{4} = \frac{1}{2}.
 
 \end{solution}
 
-通过例题，我们可以得出使用求根公式解二元一次方程的步骤：
+通过例题，我们可以得出使用求根公式解一元二次方程的步骤：
 \begin{enumerate}
     \item 列出二次项系数、一次项系数、常数项
     \item 计算判别式的值判断根的情况
@@ -745,6 +814,9 @@ qs = c，ps + qr = b
 并不是所有一元二次方程都可以使用十字相乘法因式分解，这时候就要灵活使用其他方法解方程.
 
 \section{一元二次方程的根}
+
+前面学习如何解方程，本节讲解方程的根相关内容，1.4.1的内容虽然在课本上是选学内容，但是依旧非常重要
+
 \subsection{韦达定理（根与系数的关系）}
 
 \subsection{有理数根与整数根}
@@ -764,15 +836,108 @@ qs = c，ps + qr = b
 
 \section{综合练习（1.5-1.7）}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{二次函数}
 
-\section{二次函数基本}
+\section{二次函数的基本}
 
-\subsection{二次函数的图像与性质}
+在八年级学习过函数的定义：一般地，在一个变化过程中，如果有两个变量\(x\)与\(y\)，并且对于\(x\)的每一个确定的值，\(y\)都有唯一确定的值与之对应，那么我们就说\(x\)是自变量，\(y\)是\(x\)的函数.
+\par
+当自变量\(x\)和因变量\(y\)有如下关系：
+\(y=kx+b\)
+则此时称\(y\)是\(x\)的一次函数. 特别地，当\(b=0\)时，\(y\)是\(x\)的正比例函数.
+\par
+本章学习另一种函数：二次函数. 首先从二次函数的基本性质入手，再运用性质解决不同的问题，学习本章不仅需要熟悉基本的知识，还要积累经验和技巧.
 
-\subsection{二次函数的解析式}
 
-\subsection{二次函数与一元二次方程}
+\subsection{二次函数的定义}
+
+\begin{definition}
+一般地，形如\(y=ax^2+bx+c\)（\(a,\ b,\ c\)是常数，\(a\ne0\)）的函数， 叫做二次函数.
+\par
+其中\(x\)是自变量，\(y\)是\(x\)的函数，\(a,\ b,\ c\)分别表示函数解析式的二次项系数、一次项系数、常数项．
+\end{definition}
+
+根据课本的定义，可以得到二次函数必须具有的条件：
+\begin{enumerate}
+    \item 关系式为整式
+    \item 自变量最高次数为2（注意系数\(a\ne0\)保证二次项存在）
+\end{enumerate}
+
+\subsection{二次函数的图像}
+
+\subsubsection{画二次函数的图像}
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.2} % 增加行高
+\begin{tabular}{|c|*{7}{c|}} \hline
+\( x \) & \(-3\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) \\ \hline\hline
+\( y \) & \(9\) & \(4\) & \(1\) & \(0\) & \(1\) & \(4\) & \(9\) \\ \hline
+\end{tabular}
+\caption{\( y = x^2 \) 的函数值表}
+\end{table}
+
+先描点，再用平滑的线连接，就能得到这个二次函数的图像
+
+%%%%%%%%%%%示例函数图像%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+    \begin{axis}[
+        axis lines = middle,       % 坐标轴居中
+        > = Stealth,
+        xlabel = $x$,             % x轴标签
+        ylabel = $y$,             % y轴标签
+        xmin = -5, xmax = 5,      % x轴范围
+        ymin = -1, ymax = 7,      % y轴范围
+        xtick = {-4,-3,...,4},    % x轴刻度
+        ytick = {-1,...,1,2,3,4,5,6},  % y轴刻度
+        legend pos = north west,  % 图例位置
+    ]
+    
+    \addplot [
+        domain = -5:6,
+        samples = 100,
+        thick
+    ] {x^2};
+    
+    \node[anchor=west] at (axis cs:3,6.5) {\(y=x^2\)};
+    
+    \end{axis}
+    \end{tikzpicture}
+    \caption{}
+    \label{fuc_1}
+\end{figure}
+
+类似的，按照步骤能画出不同的函数图像.
+\par
+\subsubsection{二次函数图像的性质}
+通过图像可以看出二次函数\(y=x^2\)的图像是一条抛物线，实际上所有的二次函数图像都是抛物线\footnote{伽利略（Galileo Galilei）（1564-1642）通过实验发现抛射体运动轨迹是抛物线，将物理现象与二次函数图像明确对应，笛卡尔（René Descartes）（1596-1650）创立解析几何（1637年《几何学》）首次用坐标系证明抛物线对应\(y=ax²+bx+c\)形式的方程.}，所以我们把二次函数\(y=ax^2+bx+c\)的图像也叫做抛物线\(y=ax^2+bx+c\).
+\par
+观察图\ref{fuc_1}还能发现二次函数\(y=x^2\)是一个轴对称图形，而\(x=0\)则是他的对称轴，实际上所有二次函数都是轴对称图形，所有二次函数都有它的\textbf{对称轴}，而\textbf{二次函数与对称轴的交点}称为二次函数的\textbf{顶点}，在图\ref{fuc_1}中，抛物线\(y=x^2\)的顶点是\((0,0)\)，也就是原点.
+\par
+观察图\ref{fuc_1}中\(x\)和\(y\)的关系，在抛物线的左侧也就是\(x>1\)时，\(y\)随\(x\)的增大而增大，当\(x<1\)时，\(y\)随\(x\)的增大而减小．函数在某一范围内随着自变量的增大而减小的性质可以取名为增减性\footnote{在未来的学习中，会更加准确的了解这个性质的定义，在高中教材称为单调性}．
+\par
+现在的抛物线$y=x^2$中，二次项系数的值为１，如果改变二次项系数$a$图像会发生变化吗？下面再用\(y=\dfrac{1}{2}x，y=-x^2, y=-\dfrac{1}{2}x^2\)三个函数作为示例．列表描点连线作出三个函数的图像
+\par
+对比函数图像，得出当\(a>0\)时，抛物线～～的开口向上，当$a<0$时，抛物线的开口向下，\(a\)的绝对值（$|a|$）越大，开口越小，$|a|$越小开口越大
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%接例题判断开口等性质
+\begin{example}
+    写出下列抛物线的开口方向、对称轴、顶点坐标．
+\end{example}
+
+\section{二次函数的形式与图像性质}
+
+\subsection{顶点式}
+
+%顶点式的关键是顶点坐标为(h,k)
+
+\subsection{一般式}
+
+\subsection{交点式（两根式）}
 
 \chapter{旋转}
 
