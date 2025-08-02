@@ -1,4 +1,4 @@
-\documentclass[lang=cn, 10pt, titlestyle=display, oneside]{elegantbook}
+\documentclass[lang=cn, 10pt, titlestyle=display, oneside, toc=twocol]{elegantbook}
 \usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{pgfplots}
@@ -11,9 +11,9 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 \usepackage{etoolbox}
-\usepackage{amsmath}  % 提供数学公式支持
-\usepackage{array}    % 提供更强大的表格功能
-
+\usepackage{amsmath}
+\usepackage{array}
+\setcounter{tocdepth}{2}
 
 \title{九年级数学讲义（人教版）}
 
@@ -738,8 +738,8 @@ x_2 = \frac{5 - 3}{4} = \frac{1}{2}.
         \item \((x+3)(x-1)=3\)
     \end{enumerate}
     (2)已知关于\(x\)的一元二次方程方程\(x^2-(m+2)x+2m=0\).\\
-    (1)求证：无论\(m\)取任何实数，方程总有实数根\\
-    (2)若等腰三角形的一边长为3，另外两边长恰好是这个方程的两个根，求\(m\)的值.
+    1.求证：无论\(m\)取任何实数，方程总有实数根\\
+    2.若等腰三角形的一边长为3，另外两边长恰好是这个方程的两个根，求\(m\)的值.
 \end{multicols}
 \end{exercise}
 
@@ -761,7 +761,7 @@ x_2 = \frac{5 - 3}{4} = \frac{1}{2}.
 \end{solution}
 相较于前面的方法，使用零因子法则降次的过程更加简洁，但是你是否注意到了，前面在学习配方法解一元二次方程的时候我们提到过，我们将方程化为\((x+n)^2=p\)的形式后降次，此时p的值会影响根的情况，在学习用求根公式解方程的时候，我们使用判别式判断根的情况，但在这里似乎省略了判断根的情况？表面上看来确实是这样，不需要判断根的情况是使用因式分解法的优势也是它的过程更简洁的原因，那么根的情况又由什么决定呢？
 \par
-实际上这由这两个因式决定，假设有关于\(x\)的方程\((x+m)(x+n)\)，如果两个因式化成的两个方程的解都在实数范围内，实际上这个方程就有两个实数根，如果\(m=n\)或者一个解不在实数范围内另一个解在实数范围内，原方程有两个相等的实数根，如果两个解都不在实数范围内，也就是说原方程无实数根. 这段话理解即可，在实际做题中我们要发挥因式分解法最大的优势就是在解题过程中不用思考根的情况.
+实际上根的情况由这两个因式决定，假设有关于\(x\)的方程\((x+m)(x+n)\)，如果两个因式化成的两个方程的解都在实数范围内，实际上这个方程就有两个实数根，如果\(m=n\)或者一个解不在实数范围内另一个解在实数范围内，原方程有两个相等的实数根，如果两个解都不在实数范围内，也就是说原方程无实数根. 这段话理解即可，在实际做题中我们要发挥因式分解法最大的优势就是在解题过程中不用思考根的情况.
 
 在八年级我们学习过用提公因式（提取式子中的最大公因式）和乘法公式（平方差公式或完全平方公式）来因式分解，因式分解是指将一个多项式表示为若干个不可约多项式的乘积形式的过程
 \par
@@ -933,12 +933,328 @@ qs = c，ps + qr = b
 
 \subsection{顶点式}
 
+\(y=a(x-h)^2+k\)是定点式的形式，其中\(k\)和\(h\)的值控制着函数平移的方向和距离.
+
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+    \begin{axis}[
+        axis lines = middle,       % 坐标轴居中
+        > = Stealth,
+        xlabel = $x$,             % x轴标签
+        ylabel = $y$,             % y轴标签
+        xmin = -5, xmax = 5,      % x轴范围
+        ymin = -1, ymax = 7,      % y轴范围
+        xtick = {-4,-3,...,4},    % x轴刻度
+        ytick = {-1,...,1,2,3,4,5,6},  % y轴刻度
+        legend pos = north west,  % 图例位置
+    ]
+    
+    \addplot [
+        domain = -5:6,
+        samples = 100,
+        thick,
+        gray,
+        densely dashed
+    ] {x^2};
+    
+    \node[anchor=west, gray] at (axis cs:3,5) {\(y=x^2\)};
+
+     \addplot [
+        domain = -5:6,
+        samples = 100,
+        thick,
+        blue
+    ] {x^2+3};
+    
+
+    \addplot [
+        domain = -6:6,
+        samples = 100,
+        thick,
+        red
+    ] {(x+3)^2+3};
+    
+    \node[anchor=west, red] at (axis cs:-4,6) {\(\)};
+
+    \draw[densely dashed, ultra thick, blue] (0,0) -- (0,3) node[anchor=west, blue] at (axis cs:0.3,2) {$y=x^2+3$};
+
+    \draw[densely dashed, ultra thick, red] (0,3) -- (-3,3) node[anchor=south, red] at (axis cs:-2.7,2) {$y=(x-(-3))^2+3$};
+    
+    \end{axis}
+    \end{tikzpicture}
+    \caption{}
+    \label{fuc_2}
+\end{figure}
+
+如上图所示，
 %顶点式的关键是顶点坐标为(h,k)
 
 \subsection{一般式}
 
+顶点式实际上由一般形式配方而来, 二次函数的顶点式常用于直观表现出二次函数的顶点, 一般形式主要体现抛物线与系数的关系
+
 \subsection{交点式（两根式）}
 
+
+\section{求二次函数解析式}
+
+\section{二次函数区间最值}
+
+\section{二次函数与坐标轴、直线的交点}
+
+本节探讨二次函数与坐标轴或任意直线的交点有关的问题．分为两类，一类是与线段、射线或直线的交点，另一类是与坐标轴的交点
+\subsection{与线段、射线或直线的交点}
+这类题目通常会提供一个含参的二次函数和一个范围（区间、直线、坐标轴或其他），然后探讨参数取何值能使二次函数与这个范围有一个交点、两个交点或没有交点．我们首先探讨二次函数与横轴的交点，以此为基础再推广到抛物线与任何直线的交点．
+\subsubsection*{代数思想}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%函数中的定值
+%横轴上一点，二次项系数开口向下，一定有两个交点
+
+%定点在横轴上，必定只有一个交点
+
+%函数里的ｋ必须能被“抵消”掉（即含ｋ的式子能等于 0）时，函数过定点
+
+%－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－开始分类
+
+
+首先要观察表达式中提供的信息，例如二次函数过某一定点、开口方向、对称轴等等信息，利用已知信息会减少下来不必要的分类讨论．
+
+要想把二次函数限定在横轴上要从四个方面考虑：
+\begin{enumerate}
+    \item \textbf{开口方向}（这是分类的前提条件）
+    \item \textbf{判别式}（限定根的情况）
+    \item \textbf{对称轴}（根的值不确定时,限定范围）
+    \item \textbf{范围端点}（紧接对称轴限定的范围继续限定在范围的两个端点内）
+\end{enumerate}
+
+下面通过例题实际感受:
+
+\begin{example}
+    已知抛物线 \( y = x^2 - kx - k \)，\( A (1, -2) \)，\( B (4, 10) \)．抛物线与线段 \( AB \)（包括 \( A \)，\( B \) 两点）有两个交点，则 \( k \) 的取值范围为\underline{\hspace{4.5em}}．
+\end{example}
+
+\begin{example}
+已知抛物线 \( y_1 = mx^2 + 4x - 2 \) (\( m \neq 0 \)) 的顶点为 \( C \)．已知点 \( M(-1, -4), N(3, 0) \)，若该抛物线与线段 \( MN \) 总有两个不同的交点，请求出 \( m \) 的取值范围．
+\end{example}
+
+%１确定开口方向
+%＋
+%有无定量（过定点）
+%可以得出
+%横轴上下一点，二次项系数开口向下或向下，一定有两个交点
+
+
+%－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－卡交点
+
+在确定开口方向的情况下234
+
+２确定判别式的情况（限定在横轴上有无交点／有几个交点）
+二次函数与横轴的交点的横坐标实际上是\(y=0\)时\(x\)的值，可以看作是一个一元二次方程，要判断这个二次函数与横轴有没有交点．实际上就是判断一元二次方程有没有实数根，使用根的判别式\(\Delta\)就能解决．结合＂求根公式法＂这一章就知道如果有一个交点那么\(\Delta=0\)，如果有两个交点，则\(\Delta>0\)
+
+%－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－卡范围
+
+
+３确定对称轴在题目给定的范围内
+
+
+４范围两端点
+
+
+
+
+恒等变形转化为与横轴的交点
+
+
+
+
+
+
+\subsubsection*{图像思想}
+
+前面我们使用代数思想分析交点类的问题，使用代数法解决交点问题比较通用．但在遇到已知条件较为充足时可以采用数形结合的思想快速解决此类问题，适用于条件丰富无需分类讨论的题目，缺点是不能适用于所有题目，比较局限．
+
+\begin{example}
+一段抛物线 \( L: y = -x (x-3) + c \)\( (0 \leq x \leq 3) \) 与直线 \( l: y = x + 2 \) 有唯一公共点，则 \( c \) 的取值范围为\underline{\hspace{4em}}。
+\end{example}
+
+\subsection{与坐标轴的交点}
+明确交点类型
+分类讨论函数类型
+分析交点总数
+特殊情形处理
+
+检查函数是否通过原点(0,0)
+
+检查与y轴交点是否同时也是与x轴交点
+
+\section{二次函数实际问题}
+
+
+\subsection*{有关图形}
+
+\subsection*{有关商品利润}
+
+\subsection*{有关抛物线形状}
+
+\section{二次函数与几何}
+
+
+
+\subsection{二次函数的几何变换}
+
+\subsubsection*{平移}
+还记得平移运动吗？简单回顾：平移是全等的几何变换（平移前和平移后的图形全等），平移具有交换性（比如一个正方形先向上平移3个单位再向左平移3个单位，如果颠倒顺序，最终位置相同）和可逆性（平移后可以通过反向平移回到原位置）．
+\par
+对二次函数平移其实就是\textbf{对二次函数的顶点平移}，进行任何平移操作前需要先把二次函数化为顶点式以方便操作．
+\par
+假设有\(y=a(x-h)^2\)，若\(h>0\)则函数向左平移，若\(h<0\)则函数向右平移,都是平移\(|h|\)个单位；假设有\(y=ax^2+k\)，若\(k>0\)则函数向上平移，若\(k<0\)则函数向下平移,都是平移\(|k|\)个单位．两者一起进行就是顶点式\(y=a(x-h)^2+k\)．
+\par
+回顾平移的性质和如何对抛物线的顶点平移后，我们就能处理二次函数沿水平或竖直方向(坐标轴方向)平移的问题：
+
+\begin{example}抛物线\( l_1 \)是由抛物线\( l_2 \)向下平移3个单位长度，再向左平移2个单位长度得到的，已知抛物线\( l_1 \)的解析式为\( y=2(x-2)^2+3 \)，则抛物线\( l_2 \)的解析式为（\hspace{3.5em}）
+
+\begin{enumerate}[label=\Alph*.]
+    \item \( y=2(x-4)^2+6 \)
+    \item \( y=2(x-2)^2 \)
+    \item \( y=2x^2+6 \)
+    \item \( y=2x^2 \)
+\end{enumerate}
+\end{example}
+\begin{solution}
+    分析：因为１由２向下平移３个单位再向左平移２个单位，题目已知１求２，只需对１进行反向操作，即向右平移２个单位再向上平移３单位，经过计算Ａ正确．
+\end{solution}
+以上是抛物线沿坐标轴方向平移的例子，如果沿斜向（即直线）平移呢？这时候只要知道平移的距离和直线的解析式，过移动后的顶点做垂线，垂直于坐标轴，就能\textbf{构造一个直角三角形}．根据直线解析式，\textbf{设移动后顶点的坐标}，顶点的横纵坐标值就是三角形直角边的长，最后通过\textbf{勾股定理}就能得出移动后顶点的坐标．
+\begin{example}
+    将抛物线 \( y = x^2 \) 沿直线 \( y = 3x \) 方向移动 \(\sqrt{10}\) 个单位长度，若移动后抛物线的顶点在第一象限，则移动后抛物线的解析式是\underline{\hspace{4em}}。
+\end{example}
+\begin{solution}
+    分析：该二次函数沿一条直线移动，没有指定移动的方向，但题目要求移动后二次函数的顶点在第一象限，因为该直线（正比例函数）的斜率为\(3>0\)，\(x>0\)时\(y\)随\(x\)的增大而增大，所以只有在二次函数往右上方移动时才符合题意（可以画草图辅助理解，如图\ref{fig:move1}），此时根据正比例函数可以设移动后的坐标为\((m,3m)\)，再作\(BA\)垂直于\(x\)轴，原点为点\(C\)，移动后的定点坐标为\(B\)，\(BA=3m,CA=m,CB=\sqrt{10}\)，利用勾股定理即可求出移动后的顶点坐标，根据顶点坐标列成顶点式再化为一般式即可．
+    \par
+    \begin{figure}[h]
+        \centering
+    \begin{tikzpicture}[scale=0.5]
+    % 绘制坐标系
+                                        \draw[->, thick] (-1,0) -- (4,0) node[right] {$x$}; % x轴
+                                        \draw[->, thick] (0,-1) -- (0,6) node[above] {$y$}; % y轴
+                                        \draw[domain=-1.4:1.4, smooth, dashed, thick, gray] plot (\x, {\x*\x}); % 标注函数
+                                        \draw[domain=-0.35:2, smooth, thick] plot (\x, {\x*3}); % 标注函数
+                                        \draw[domain=-0.5:2.5, smooth, thick, black] plot (\x, {(\x - 1)^2 + 3}); % 标注函数
+                                        \draw[red, ultra thick] (0,0) node[above left] {$\textbf{C}$} -- (1,3) node[right] {$\textbf{B}$};
+                                        \draw[red, ultra thick] (1,0) node[above right] {$\textbf{A}$} -- (1,3);
+                                        \draw[red, ultra thick] (0,0) -- (1,0);
+    \end{tikzpicture}
+    \caption{}
+        \label{fig:move1}
+    \end{figure}
+\end{solution}
+\begin{exercise}
+    \small
+    \setlength{\parindent}{0pt} % 取消段落缩进
+    \setlength{\columnseprule}{0.01pt}
+    \begin{multicols}{2}
+    (1)如图1,在平面直角坐标系中,已知点 \( A \) 坐标为 \((2,4)\),直线 \( x=2 \) 与 \( x \) 轴相交于点 \( B \),连接 \( OA \),二次函数 \( y=x^2 \) 图象从点 \( O \) 沿 \( OA \) 方向平移,与直线 \( x=2 \) 交于点 \( P \),顶点 \( M \) 到 \( A \) 点时停止移动。
+    %\begin{figure}[h]
+        %\centering
+        
+    %\end{figure}
+    \begin{enumerate}
+        \item 求线段 \( OA \) 所在直线的函数解析式．
+        \item 设二次函数顶点 \( M \) 的横坐标为 \( m \),当 \( m \) 为何值时,线段 \( PB \) 最短,并求出二次函数的解析式．
+        \item 当线段 \( PB \) 最短时,二次函数的图象能否过点 \( Q(a,a-1) \) ? 若能,求出 \( a \) 的值;若不能,请说明理由．
+    \end{enumerate}
+
+
+
+
+    (2)已知抛物线 \( y = ax^2 - 2ax - 8 \ (a \neq 0) \)，若将该函数先向左平移 1 个单位，再向上平移 9 个单位，顶点恰好落在原点上。
+
+    \begin{enumerate}
+        \item 求抛物线的函数解析式和顶点坐标；
+        \item 若有一直线 \( l \) 与抛物线交于点 \( A(-3, m) \)，\( B(n, 16) \)，且 \( n > 0 \)。若点 \( P \) 在抛物线上且在直线 \( l \) 下方，且点 \( P \) 不与点 \( A, B \) 重合，分别求出点 \( P \) 横坐标与纵坐标的取值范围。
+    \end{enumerate}
+    
+    \end{multicols}
+
+    
+\begin{figure}[h]
+                \subfigure{
+                        \begin{minipage}{5cm}
+                                \centering
+                                        \begin{tikzpicture}[scale=0.5] % 整体缩放
+                                        % 绘制坐标系
+                                        \draw[->, thick] (-1,0) -- (4,0) node[right] {$x$}; % x轴
+                                        \draw[->, thick] (0,-1) -- (0,6) node[above] {$y$}; % y轴
+                                        % 标注原点 O
+                                        \node at (0,0) [below left] {$O$};
+                                        % 绘制点 A(2,4)
+                                        \filldraw (2,4) circle (0pt) node[above left] {$A$};
+                                        % 绘制直线 x=2（虚线）
+                                        \draw[thick] (2,-1) -- (2,6) node[above] {$x=2$};
+                                        % 绘制点 B(2,0)
+                                        \filldraw (2,0) circle (0pt) node[below left] {$B$};
+                                        % 绘制直线 OA（实线）
+                                        \draw[thick] (0,0) -- (2,4) node[midway, above left, black] {}; % 不额外标注
+                                        % 绘制初始二次函数 y=x^2（虚线，示意原始位置）
+                                        \draw[domain=-1.4:1.4, smooth, dashed, thick] plot (\x, {\x*\x}); % 标注函数
+                                        % 绘制平移后的二次函数（示例：顶点 M 在 (1,2) 处）
+                                        % 函数解析式：y = (x-1)^2 + 2 = x^2 - 2x + 3
+                                        \draw[domain=-0.4:2.4, smooth, thick] plot (\x, {(\x-1)^2 + 2}); % 标注
+                                        % 标注顶点 M(1,2)
+                                        \filldraw (1,2) circle (0pt) node[above] {$M$};
+                                        % 标注点 P(2,3)（二次函数与 x=2 的交点）
+                                        \filldraw (2,3) circle (0pt) node[right] {$P$};
+                                        
+                                        \end{tikzpicture}
+                                        \par
+                                        图1
+                        \end{minipage}
+                }
+\end{figure}
+\end{exercise}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection*{轴对称}
+\subsection{二次函数与\textbf{线段}}
+
+\subsubsection*{线段值}
+
+\subsubsection*{线段关系}
+
+\subsubsection*{线段最值}
+
+\subsection{二次函数与\textbf{面积}}
+
+\subsubsection*{面积公式与割补}
+
+\subsubsection*{铅锤法}
+
+\subsubsection*{转化法}
+
+\subsection{二次函数与\textbf{角度}}
+
+\subsubsection*{角度定值或范围}
+
+\subsubsection*{角度数量关系}
+
+\subsection{二次函数与\textbf{特殊几何图形}}
+
+\subsubsection*{特殊三角形}
+
+\subsubsection*{特殊四边形}
+%_______________________________________________________________________________________________________________________________________________
 \chapter{旋转}
 
 \section{旋转基本}
