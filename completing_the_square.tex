@@ -1,0 +1,158 @@
+\section{配方}
+
+
+
+配方是一种把二次多项式（如 \(ax^2 + bx + c\)）通过添加和减去同一个项，转化为完全平方式的数学技巧.
+\par
+\begin{remark}
+    完全平方是指一个数或代数式可以表示为另一个数或代数式的平方，例如\( 1=1^2,\ 4=2^2,\ \)（这些是数的完全平方）\(x^2+6x+9=(x+3)^2,\ 4x^2-12xy+9y^2=(2x-3y)^2\)等等.
+\end{remark}
+\par
+在八年级我们学习过完全平方公式\(a^2+b^2\pm2ab=(a\pm b)^2\)来因式分解，这个公式本质上就是在配方. 但并不是所有式子都能使用这个公式来配方，例如\(x^2+2x\)就没有办法直接套用公式，面对这种情况就需要使用配方法来转化为一个有完全平方的式子，形如\(a(x+h)^2+k\)，下面就用\(x^2+2x\)作为配方示范：
+\begin{example}
+给\(x^2+2x\)配方
+\end{example}
+\par
+\begin{solution}
+    \begin{enumerate}
+  \item 分析一次项结构，将一次项分解为：\\
+  \[
+  2x = 2 \cdot x \cdot 1
+  \]
+  这对应完全平方公式中的 \(2ab\)，其中 \(a = x\)，\(b = 1\)
+  
+  确定需要添加的项，根据完全平方公式，需要添加 \(b^2\)：
+  \[
+  b^2 = (1)^2 = 1
+  \]
+  
+  \item 同时增减此项
+  \begin{align*}
+  x^2 + 2x &= x^2 + 2x + 1 - 1 \\
+            &= (x^2 + 2x + 1) - 1
+  \end{align*}
+  
+  \item 重组为完全平方式，前三项恰好是 \(x\) 和 \(1\) 的完全平方
+  \begin{remark}
+  将$1^2$移出括号不能忘记乘上括号前的系数1）
+  \end{remark}
+  \[
+  = (x + 1)^2-1
+  \]
+  \item 一般来说最后需要整理方程，$(x + 1)^2-1$已经最简所以不用整理
+\end{enumerate}
+
+\end{solution}
+以上是平方项（二次项）为1的情况，当平方项为1时，才能分解一次想的结构从而配出另一个平方项，但是当平方项不为1呢？这个时候就要先把平方项化为1，可以通过“因式分解-提取公因式”做到，下面以给\(2x^2 + 6x+1\)配方为例子
+\par
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+    将 \(2x^2 + 6x+1\) 配方
+\end{example}
+\begin{solution}
+\begin{enumerate}
+    \item 提取前两项的系数 \(2\)：
+    \begin{align*}
+    \text{原式} &= 2\left(x^2 + 3x\right) + 1
+    \end{align*}
+
+    \item 在括号内配方（补全平方）：
+    \begin{align*}
+    &= 2\left[x^2 + 3x + \left(\frac{3}{2}\right)^2 - \left(\frac{3}{2}\right)^2\right] + 1\\
+    &=2\left[\left(x + \frac{3}{2}\right)^2 - \frac{9}{4}\right] + 1
+    \end{align*}
+
+    \item 展开并合并常数项
+    \begin{remark}
+    将\(\frac{4}{9}\)移出括号不能忘记乘上提取的系数）
+    \end{remark}
+    \begin{align*}
+    &=2\left(x + \frac{3}{2}\right)^2 - \frac{9}{2} + 1 \\
+    &= 2\left(x + \frac{3}{2}\right)^2 - \frac{7}{2}
+    \end{align*}
+\end{enumerate}
+
+最终配方结果为：
+\[
+2\left(x + \frac{3}{2}\right)^2 - \frac{7}{2}
+\]
+
+\end{solution}
+
+以上两道是已知一个平方项和一次项配另一个平方项的例题，你是否发现我们配的平方项和一次项系数之间的关系？
+\par
+当已知平方项的系数为1，设一次项系数为\(A\)，那我们配上的项就是\((\dfrac{A}{2})^2\)（一次项系数的一半的平方），运用这个关系在配方时就不用再拆解一次项进行分析，但要注意必须在平方项系数为1时，所以在配方时先检查平方项系数是否为1，如果不是可以像例题1.6一样提取公因式把平方项系数化为1再配方，对于已知一个平方项和一次项配另一个平方项的题型，总结配方步骤如下：
+\begin{enumerate}
+    \item 把平方项（二次项）系数化为1
+    \item 同时增加和减少一次项系数的一半的平方
+    \item 将要配的三项写成完全平方形式（把要减去的项提出来时要乘上括号前的系数）
+    \item 整理式子成一般形式：\( a(x + h)^2 + k \)
+\end{enumerate}
+\par
+配方不仅能够因式分解，还可以解决一些其他的数学问题，例如配方得到多项式的极值，配方后开方降次解一元二次方程. 这一节先讲用配方得到式子的极值
+\par
+由于平方具有非负性，也就是说\(a^2\geq0\)，且\(a=0\)时，\(a^2\)的最小值为0，根据这一点，
+当二次多项式配方为 \( a(x + h)^2 + k \) 时，因为 \( (x + h)^2 \geq 0 \)，所以：
+\newline
+\begin{itemize}[label=]
+    \item 如果 \( a > 0 \)，多项式的最小值为 \( k \)（当 \( x = -h \) 时取得）；
+    \item 如果 \( a < 0 \)，多项式的最大值为 \( k \)（当 \( x = -h \) 时取得）.
+\end{itemize}
+
+\begin{example}
+若\(x\)为任意实数，求代数式\(x^2+4x+2\)的最小值
+\end{example}
+
+\begin{solution}
+
+\begin{align*}
+x^2 + 4x + 2 &= x^2 + 4x + 4 - 4 + 2 \\
+&= (x^2 + 4x + 4) - 2 \\
+&= (x + 2)^2 - 2.\\
+\end{align*}
+\begin{align*}
+&\because (x + 2)^2 \geq 0\\
+&\therefore (x + 2)^2-2 \geq -2\\
+&\therefore x^2 + 4x + 2 \  \text{的最小值是}-2
+\end{align*}
+\end{solution}
+
+\begin{exercise}
+\small
+    \setlength{\parindent}{0pt} % 取消段落缩进
+    \setlength{\columnseprule}{0.01pt}
+    \begin{multicols}{2}
+        \begin{minipage}{1\linewidth}
+        (1)给\( 4x^2 +1\)配上一个单项式，使之成为完全平方式.
+        \end{minipage}
+        
+        \begin{minipage}{1\linewidth}
+        (2)给下列多项式配方.
+        \begin{enumerate}
+            \item \((2x+1)^2-2(2x+1)+1\)
+            \item \(3x^2-6x-2\)
+            \item \(3x^2+8x-3\)
+            \item \(x^2+2x+10\)
+        \end{enumerate}
+        \end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%还有习题没编完，参考5星学霸第六页
+        \begin{minipage}{1\linewidth}
+        (3)\(-x^2+4x-7\)的最小值是\underline{\hspace{3.5em}}，此时\(x=\)\underline{\hspace{3.5em}}
+        \end{minipage}
+
+        \begin{minipage}{1\linewidth}
+        (4)若\(W=5x^2-4xy+y^2-2y+8x+3(x,y\text{为实数})，\text{则}W\)的最小值为\underline{\hspace{3.5em}}
+        \end{minipage}
+
+        (5)已知\(M=x^2+2y^2, N=2xy+y-m\)，当\(M>N\)恒成立时，求\(m\)的取值范围.
+        
+    \end{multicols}
+\end{exercise}
+
+
+
+%配方的意义重大->如何配方->配方看取值->配方分解因式
+
+%配方法解方程->用配方发推导出公式法->根的判别式->求根公式解方程->因式分解
+
+

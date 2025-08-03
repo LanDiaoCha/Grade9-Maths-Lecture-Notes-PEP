@@ -1,0 +1,218 @@
+\section{一元二次方程基本}
+\subsection{一元二次方程的定义}
+
+
+\begin{definition}[一元二次方程的定义]
+  
+等号两边都是整式，只含一个未知数，并且未知数的最高次数是2的方程，叫做一元二次方程. 以下是一元二次方程的一般形式：
+
+\begin{equation}
+    ax^2 + bx + c = 0 \ (a \neq 0)
+    \label{general_formula}
+\end{equation}
+
+ 
+\end{definition}
+
+
+
+根据课本的定义，要构成一个一元二次方程必须具有三个条件：
+\begin{enumerate}
+    \item 是整式方程（不能是分式方程）
+    \item 只含有一个未知数
+    \item 未知数的最高次数为2
+\end{enumerate}
+\par
+当三个条件同时满足时，该方程是一元二次方程.\\
+\begin{remark}
+    \(a\ne 0\)保证了该方程中含有未知数最高次数为2. 如果没有\(a\ne 0\)，则该方程不一定为一元二次方程，如果\(a= 0\)，则该方程是一个一元一次方程. 在做任何关于一元二次方程的题目时都得考虑一元二次方程的条件是否成立，尤其是注意看\(a\)的取值情况.
+\end{remark}
+\par
+我们将\eqref{general_formula}中的$ax^2$称为二次项（未知数的次数为2），a是二次项的系数；$bx$称为一次项（未知数的次数为1），$b$是一次项系数；$c$称为常数项.
+\par
+\begin{remark}
+    如果一个一元二次方程没有一次项或者常数项，那么说它的一次项为0，一次项系数为0，常数项为0
+\end{remark}
+%结构命名例题
+\begin{example}
+    分别写出下列方程的二次项系数、一次项系数和常数项
+    \begin{enumerate}
+        \item \( 6x^2+10x-5=0 \)
+        \item \( 4x^2-4=0 \)
+        \item \( 5x^2-21x+4=0 \)
+    \end{enumerate}
+\end{example}
+\par
+\begin{solution}
+    分析：阅读题目，要求写出各列方程的二次项系数、一次项系数和常数项，注意系数和常数项的符号不能忽略.解答如下：
+    \begin{enumerate}
+        \item  二次项系数：\(6x^2\)，一次项系数：\(10x\)，常数项：\(-5\)
+        \item  二次项系数：\(4x^2\)，一次项系数：\(0\)，常数项：\(-4\)
+        \item  二次项系数：\(5x^2\)，一次项系数：\(-21\)，常数项：\(4\)
+    \end{enumerate}
+\end{solution}
+$x$的值就是这个一元二次方程的解，也可以称作这个一元二次方程的根.
+\begin{remark}
+    在做题时，有时会把$x$的值称做方程的解，有时称作方程的根，可以理解为是同一个意思\footnote{但准确来说解是使方程成立的未知数的取值，根是使多项式为0的数，在初中阶段这两个概念不做区分.}
+\end{remark}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{一元二次方程一般式转化}
+
+在解题时，我们通常会先将一元二次方程整理为一般形式（$
+ax^2 + bx + c = 0 \ (a \neq 0)
+$）
+\par
+
+
+
+
+整理过程分两步：
+\begin{enumerate}
+    \item 移项、合并
+    \item 将二次项的系数化为正数
+\end{enumerate}
+%整理-例题
+\begin{example}
+    把方程\((-x+2)(x-3)=2x-6\)化为一般形式，并写出它的二次项、一次项系数和常数项
+\end{example}
+\par
+\begin{solution}
+    分析：阅读题目，首先回忆整理一元二次方程的步骤，先方程化简，再看化简结果中的二次项系数是否为负，如果是，方程两边同时乘\(-1\)将二次项系数化为正数，最后根据结果写出它的二次项、一次项系数和常数项.解答如下：
+    \begin{align*}
+    (-x) \cdot x + (-x) \cdot (-3) + 2 \cdot x + 2 \cdot (-3)&=2x-6 \\
+        -x^2 + 5x - 6 &= 2x - 6 \\
+        -x^2 + 5x - 6 - 2x + 6 &= 0 \\
+        -x^2 + 3x &= 0\\
+         x^2 - 3x &= 0% \quad (\text{两边同乘以}-1)
+    \end{align*}
+    \begin{itemize}[label=]
+        \item 二次项：$x^2$
+        \item 一次项系数：$-3$
+        \item 常数项：$0$
+    \end{itemize}
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%练习1.1%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{exercise}
+\small
+    \setlength{\parindent}{0pt} % 取消段落缩进
+    \setlength{\columnseprule}{0.01pt}
+    \begin{multicols}{2}
+        \begin{minipage}{1\linewidth}
+        (1)将方程 $(3x-1)(x+2) = 2(x+1)$ 化为一般形式.
+        \end{minipage}
+        
+        \begin{minipage}{1\linewidth}
+        (2)将方程 $\dfrac{x}{3} - \dfrac{2x-1}{6} = \dfrac{x^2-4}{2}$ 化为一般形式，并写出各项系数.
+        \end{minipage}
+
+        \begin{minipage}{1\linewidth}
+        (3)已知方程 $(x^2-9)(x+2) = (x-3)^3 + k$ 的常数项为0，求k的值.
+        \end{minipage}
+
+        \begin{minipage}{1\linewidth}
+        (4)关于$x$的一元二次方程\(2(x-1)^2+b(x-1)+c=0\)化为一般形式后为\(2x^2-3x-1=0\)，求\(b,c\)的值.
+        \end{minipage}
+        
+    \end{multicols}
+\end{exercise}
+
+
+\subsection{判定一元二次方程}
+在前面我们学习了一元二次方程的定义，如何将一元二次方程整理为一般形式.
+先回顾前面一元二次方程定义：
+\begin{enumerate}
+    \item 是整式方程
+    \item 只含有一个未知数
+    \item 未知数的最高次数为2
+\end{enumerate}
+\par
+构成一个一元二次方程必须具有这三个条件，当三个条件同时满足，可以判定一个方程是一元二次方程. 
+\begin{remark}
+没有整理好的方程要先整理，做相关题目时注意二次项的系数不能为0\((a\ne0)\).
+\end{remark}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%判定例题1
+\begin{example}
+    下列关于 \( x \) 的方程中，一定是一元二次方程的为（{\hspace{3em}}）.
+    \begin{enumerate}[label=\Alph*.]
+        \item \( x^2 + 2xy + y^2 = 0 \)
+        \item \( x^2 - 2x + 3 = 0 \)
+        \item \( x^2 - \frac{1}{x} = 0 \)
+        \item \( ax^2 + bx + c = 0 \)
+    \end{enumerate}
+\end{example}
+\par
+\begin{solution}
+    分析：阅读题目，要我们选出一定是一元二次方程的方程，需要结合一元二次方程的定义来解题，先整理方程，再看每个选项是否符合一元二次方程必须具有的三个条件.（由于本例题所有选项都整理过，所以步骤中跳过）解答如下：
+    \begin{enumerate}[label=\Alph*.]
+        \item 是整式方程，未知数的最高次数为2，但含有两个未知数（\(x,y\)），所以错误.
+        \item 是整式方程，只含有一个未知数，未知数的最高次数为2，满足所有条件所以正确.选择B.
+        \item 未知数的最高次数为2，只含有一个未知数，但是是分式方程，所以错误.
+        \item 是整式方程，只含一个未知数，未知数的最高次数为2，但是a的取值无法确定，当\(a=0\)时，方程中的未知数的最高次数为1，不一定是一元二次方程，因为题目要求“一定是”，所以错误.
+    \end{enumerate}
+\end{solution}
+%判定例题2
+\begin{example}
+关于$x$的方程 $(m^2 - 4)x^2 + (m - 2)x + 3 = 0$，当$m$ \underline{\hspace{3.5em}} 时，该方程是一元二次方程，当$m$ \underline{\hspace{3.5em}} 时，该方程是一元一次方程.
+\end{example}
+\par
+\begin{solution}
+    分析：阅读题目，先判断何时为一元二次方程. 这个方程中只需要确定$(m^2 - 4)$不等于0即可使方程是一元二次方程，所以列不等式$(m^2 - 4)\ne0$确定取值范围，然后填空. 再判断何时为一元一次方程，需要列$(m^2 - 4)=0$消除二次项使方程符合未知数最高次数为1的条件，还需要使一次项系数不等于0，由此列$(m-2)\ne 0$，最后综合答案填空，解答如下：
+    
+    一元二次方程条件：
+    \[
+    m^2 - 4 \neq 0 \Rightarrow m \neq \pm 2
+    \]
+    
+    一元一次方程条件：
+    \[
+    \begin{cases}
+    m^2 - 4 = 0 \\
+    m - 2 \neq 0
+    \end{cases}
+    \Rightarrow m = -2
+    \]
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{exercise}
+    \small
+    \setlength{\parindent}{0pt} % 取消段落缩进
+    \setlength{\columnseprule}{0.01pt}
+    \begin{multicols}{2}
+        
+        
+        \begin{minipage}{1\linewidth}
+        (1)给出下列方程：
+            \begin{enumerate}[label=\textcircled{\arabic*}, itemjoin={, }]
+                \item $x^2 - 5x = 0$;
+                \item $x(x - 1) = x - 2$;
+                \item $x + \frac{1}{x} = 2$;
+                \item $x^2 + 2xy - y^2 = 0$;
+                \item $(a + 1)x^2 = 1$（$a$ 是常数）;
+                \item $(x - 1)^2 = 8$.
+            \end{enumerate}
+            其中一元二次方程有\underline{\hspace{3.5em}}（只填序号）
+        \end{minipage}
+        \begin{minipage}{1\linewidth}
+            (2)下列关于 \( x \) 的方程中，是一元二次方程的为（{\hspace{3em}}）.
+            \begin{enumerate}[label=\Alph*.]
+                \item \( x^2 + \dfrac{1}{x} = 0 \)
+                \item \( x^2 - xy = 0 \)
+                \item \( x^2 + 2x = 1 \)
+                \item \( ax^2 + bx = 0 \) (\( a, b \) 为常数)
+            \end{enumerate}
+        \end{minipage}
+        \begin{minipage}{1\linewidth}
+        \vspace{0.25cm}
+        (3)判断关于 $x$ 的方程 $\dfrac{|k^2-1|}{k+1}x^2 + \sqrt{(k-2)^2},x = \dfrac{5}{x-1} + 3$ 何时为一元二次方程.
+        \vspace{0.25cm}
+        \end{minipage}
+        \begin{minipage}{1\linewidth}
+        (4)若方程 $(m^2-3m+2)x^{m^2-5m+8} + (m-4)x + 3 = 0$ 是关于 $x$ 的一元二次方程，求$m$的值.
+        \end{minipage}
+        
+    \end{multicols}
+\end{exercise}

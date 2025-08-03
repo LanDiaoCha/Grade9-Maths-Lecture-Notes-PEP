@@ -1,0 +1,337 @@
+\section{解一元二次方程}
+1.1学习了关于一元二次方程的基本内容包括一元二次方程的定义和判定，将一元二次方程转化为一般形式的能力，之后的小节与前面的知识点是强关联的，所以请及时温习知识仔细做题. 1.2主要学习了如何给二次多项式配方和用配方得到式子的极值，前面提到过运用配方可以解一元二次方程，具体来说是将方程配方后等式两边同时开方达到\textbf{降次}的目的
+\par
+在初中，解高次方程的主要思路是降次，降次是指通过数学变形（如因式分解、换元、展开等）将一个高次问题转化为低次问题（例如把一元二次方程问题转变为一元一次方程的问题），从而简化计算或求解过程，在初中常用的降次方法有配方后开方降次、因式分解降次、展开消元降次、求根公式降次等，本节主要学习用不同方法达到降次的目的，灵活使用不同的方法降次解方程是练习的重点.
+\subsection{配方法（配方后开方降次）}
+
+
+\par
+
+
+配方法的基本思路是将方程式配方，再将两边同时开方降次，将一元二次方程问题转化为一元一次方程问题是配方法的内容.
+
+\begin{example}
+    用配方法解关于\(x\)的方程\((2x+4)x - 1 = 0\)
+\end{example}
+\begin{solution}
+
+\begin{align*}
+\intertext{1. 将方程转化为一般形式，将常数项移到等式右边：}
+2x^2 + 4x - 1 &= 0 \\
+2x^2 + 4x &= 1 \\
+\intertext{2. 配方}
+2\left(x^2 + 2x\right) &= 1\\
+2\left[x^2 + 2x + \left(\frac{2}{2}\right)^2 - \left(\frac{2}{2}\right)^2\right] &= 1 \\
+2\left[(x + 1)^2 - 1\right] &= 1 \\
+\intertext{3. 展开整理：}
+2(x + 1)^2 - 2 &= 1 \\
+(x + 1)^2 &= \frac{3}{2} \\
+\intertext{4. 两边同时开平方以降次：}
+\sqrt{(x + 1)^2} &= \sqrt{\frac{3}{2}} \\
+|x + 1| &= \frac{\sqrt{6}}{2} \\
+x + 1 &= \pm \frac{\sqrt{6}}{2} \\
+\intertext{5. 移项解 \(x\)：}
+x &= -1 \pm \frac{\sqrt{6}}{2}\\
+\intertext{6. 分别写出两个解：}
+x_1=-1 + \frac{\sqrt{6}}{2},\ x_2=-1 - \frac{\sqrt{6}}{2}
+\end{align*}
+
+
+\end{solution}
+通过这道例题，我们可以得出使用配方法解一元二次方程的步骤，步骤看似很多实际上在1.2经过充分练习后你应该能熟练掌握配方的步骤：
+\begin{enumerate}
+    \item 整理为一般形式，常数项移到等式右边
+    \item 配方
+        \begin{enumerate}
+        \item 把平方项（二次项）系数化为1
+        \item 同时增加和减少一次项系数的一半的平方
+        \item 将要配的三项写成完全平方形式
+        \item 整理方程成\((x + n)^2=p\)的形式
+        \end{enumerate}
+    \item \textbf{判断根的情况}（见下文和例题1.9）
+    \item 开方降次（\(p\ge0\)）
+\end{enumerate}
+\par
+\begin{remark}
+    不能把配方和解一元二次方程时使用配方法（配方后开方降次）混为一谈
+\end{remark}
+在例题1.8中第3步将方程整理成了\((x + n)^2=p\)的形式，这时要方程两边同时开平方就要考虑\(p\)的取值，我们可以通过\((x + n)^2=p\)进行推导得出不同的情况：
+\begin{enumerate}
+    \item 当\(p>0\)时，
+    \begin{align*}
+        \sqrt{(x + n)^2}&=\sqrt{p}\\
+        |x+n|&=\sqrt{p}\\
+        x&=-n\pm\sqrt{p}\\
+        x_1=-n + \sqrt{p},\ x_2&=-n - \sqrt{p}\\
+    \end{align*}
+    $\therefore \text{有两个不相等的实数根}$
+    \item 当\(p=0\)时，
+    \begin{align*}
+        \sqrt{(x + n)^2}&=\sqrt{0}\\
+        |x+n|&=0\\
+        x&=-n\\
+        x_1=x_2&=-n\\
+    \end{align*}
+    $\therefore \text{有两个不相等的实数根即重根}$
+    \item 当\(p<0\)时，因为对于任何实数\(x\)，都有\((x+n)^2\ge0\)而\(p<0\)，所以无实数根.
+
+\end{enumerate}
+根据上面的推导，我们就能够判断根的情况当（\(p\ge0\)）时开方降次，在\(p<0\)时直接写“原方程无实数根”即可，下面以\( x^2 - 6x = -9 \)和\( x^2 + 4x + 5 = 0 \)为例：
+\par
+\begin{example}
+    解关于\(x\)的一元二次方程：(1)\( x^2 - 6x = -9 \)，(2)\( x^2 + 4x + 5 = 0 \)
+\end{example}
+
+\begin{solution}
+    \begin{multicols}{2}
+    \begin{minipage}{1\linewidth}
+        (1)
+        \begin{align*}
+        x^2 - 6x + \left(\frac{-6}{2}\right)^2 &= -9 + \left(\frac{-6}{2}\right)^2 \\
+        x^2 - 6x + 9 &= -9 + 9 \\
+        (x - 3)^2 &= 0 \\
+        x &= 3 \\
+        x_1=x_2 &= 3
+        \end{align*}\\
+    \end{minipage}
+    \begin{minipage}{1\linewidth}
+        (2)
+        \begin{align*}
+        x^2 + 4x &= -5 \\
+        x^2 + 4x + \left(\frac{4}{2}\right)^2 &= -5 + \left(\frac{4}{2}\right)^2 \\
+        x^2 + 4x + 4 &= -5 + 4 \\
+        (x + 2)^2 &= -1 \\
+        \therefore \text{原方程无实数根}
+        \end{align*}
+    \end{minipage}
+    \end{multicols}
+\end{solution}
+%theorem、lemma、corollary、axiom、postulate
+\begin{exercise}
+\small
+    \setlength{\parindent}{0pt} % 取消段落缩进
+    \setlength{\columnseprule}{0.01pt}
+    \begin{multicols}{2}
+        用配方法解下列方程\\
+        (1)\(x^2+4x+4=0\)\\
+        (2)\(x^2-6x+7\)\\
+        (3)\(3x^2-12x=-12\)\\
+        (4)\(2x^2+4x-5=0\)\\
+        (5)\(2x^2-3x+1=0\)\\
+        (6)\(2x^2-6x-9=0\)\\
+        (7)\(2x^2-7x=2\)\\
+        (8)\(x(x-4)=2-8x\)\\
+        (9)\(x^2+5x+3\)\\
+    \end{multicols}
+\end{exercise}
+
+
+
+\subsection{求根公式法}
+
+
+使用配方法解一元二次方程的核心思想是通过配方使方程得到形似\((x+n)^2=p\)的形式，因为等式两边都是完全平方式，所以可以同时开平方降次，但是这样的做法比较繁琐，于是我们就将配方法法用在一元二次方程的一般形式上得到一个通用的求一元二次方程的根的公式，我们称它为求根公式.
+\begin{theorem}[一元二次方程求根公式]
+对于任意一元二次方程 $ax^2 + bx + c = 0$（$a \neq 0$），其解为：
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]
+其中 $b^2 - 4ac$ 称为判别式（$\Delta$），根的性质取决于判别式的值：
+\begin{itemize}
+    \item 当 $\Delta > 0$ 时，方程有两个不相等的实数根；
+    \item 当 $\Delta = 0$ 时，方程有两个相等的实数根（重根）；
+    \item 当 $\Delta < 0$ 时，方程有一对共轭复数根。
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+通过配方法推导如下：
+\begin{align*}
+    x^2 + \frac{b}{a}x + \frac{c}{a} &= 0\\
+    x^2 + \frac{b}{a}x &= -\frac{c}{a}\\
+    x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 &= -\frac{c}{a} + \left(\frac{b}{2a}\right)^2 \quad \text{(配方)} \\
+    \left(x + \frac{b}{2a}\right)^2 &= \frac{b^2}{4a^2} - \frac{c}{a}\\
+    \left(x + \frac{b}{2a}\right)^2 &= \frac{b^2 - 4ac}{4a^2}\\
+    %|x + \frac{b}{2a}| &= \frac{\sqrt{b^2 - 4ac}}{2a}
+\end{align*}
+\end{proof}
+因为\(a\ne0\)，所以\(4a^2>0\)保证了分母不为0可以继续计算，但在开方降次之前，发现判别式\(b^2 - 4ac\)的值会影响到根的情况（如果$b^2 - 4ac<0$ 则不能开方，因为就我们目前的知识无法解决根号下是负数的开方计算，因此需要分别讨论判别式的取值情况.
+\begin{enumerate}
+    \item 当\(b^2 - 4ac>0\)时，
+    \begin{align*}
+        x_1 = \frac{-b + \sqrt{b^2 - 4ac}}{2a}, \quad x_2 = \frac{-b - \sqrt{b^2 - 4ac}}{2a}\\
+    \end{align*}
+    $\therefore \text{有两个不相等的实数根}$
+    \item 当\(b^2 - 4ac=0\)时，
+    \begin{align*}
+         x &= \frac{-b \pm 0}{2a}\\
+    &= -\frac{b}{2a}\\
+    \end{align*}
+    $\therefore \text{有两个不相等的实数根即重根}$
+    \item 当\(b^2 - 4ac<0\)时，因为\(b^2 - 4ac<0\)此时\(\dfrac{b^2 - 4ac}{4a^2}<0\)，相当于\((x + \dfrac{b}{2a})^2<0\)，此时\(x\)取任何实数都不能使得\((x + \dfrac{b}{2a})^2<0\)，所以原方程无实数根.
+
+\end{enumerate}
+\par
+我们称\(b^2 - 4ac\)为判别式\(\Delta\)，判别式的主要作用是判断根的情况（三种情况是有两个不相等的实数根、有两个相等的实数根和无实数根）
+\par
+\begin{remark}
+注意与之前的知识做区分：前面提到过 一元二次方程一般形式中\(a\ne0\)的作用是保证方程未知数的最高次数为2（保证方程是二次方程），而这里的判别式是用于判断方程的根的情况，不要混淆使用. 
+\end{remark}
+\par
+如果我们知道方程的系数就可以使用判别式推导出根的情况，如果我们知道根的情况和部分系数通过判别式我们可以推导出方程中其他的系数.
+\begin{example}
+    已知关于\(x\)的一元二次方程\(x^2+2mx+m^2+m-2=0\)有实数根.求\(m\)的取值范围
+\end{example}
+\begin{solution}
+(1)分析：阅读题目，题目告诉我们该方程有实数根，因此\(\Delta\ge0\)，因为\(m\)是该方程的一个参数在部分系数之中，所以我们可以通过求判别式的再列关于\(m\)的不等式得出\(m\)的取值范围. \textbf{先逐个列出该方程的系数},然后代入判别式，由\(\Delta\ge0\)列不等式，最后求出\(m\)的取值范围
+\begin{align*}
+    \because& a=1,\ b=2m,\ c=m^2+m-2\\
+    \therefore& \Delta = b^2-4ac=(2m)^2-4\times1\times(m^2+m-2)=-4m+8\\
+    \because& \Delta>0\\
+    \therefore& -4m+8>0\\
+    \therefore& 解得m\le2
+\end{align*}
+\end{solution}
+\par
+由于判别式值的不同导致了\(x\)的结果不同，所以在每次使用求根公式解一元二次方程的时候都需要先计算判别式的值，再代入不同情况的公式，一般习惯先把系数列出来再代入判别式不易出错，下面通过例题学习使用求根公式解方程的过程
+\begin{example}
+    用公式法解方程：(1)\( 2x^2 - 4x + 2 = 0 \)，(2)\( x^2 + 2x + 3 = 0 \) (3)\( 2x^2 - 5x + 2 = 0 \)
+\end{example}
+\begin{solution}
+
+(1)
+    \begin{align*}
+\intertext{1. 确定系数：} 
+a = 2,\ b = -4,\ c = 2. \\
+\intertext{2. 计算判别式：}
+\Delta = b^2 - 4ac = (-4)^2 - 4 \times 2 \times 2 = 16 - 16 = 0. \\
+\intertext{3. 代入求根公式：}
+x = -\frac{b}{2a} = -\frac{-4}{4} = \frac{4}{4}. \\
+\intertext{4. 求得重根：}
+x_1=x_2 = 1.
+\end{align*}
+\begin{multicols}{2}
+(2)
+\begin{align*}
+a &= 1, \quad b = 2, \quad c = 2, \\
+\Delta &= b^2 - 4ac \\
+  &= (2)^2 - 4 \times 1 \times 2 \\
+  &= 4 - 8 \\
+  &= -4.\\
+&\because \Delta<0\\
+&\therefore \text{原方程无实数根}
+\end{align*}
+\begin{minipage}{1\linewidth}
+(3)
+\begin{align*}
+a &= 2, \quad b = -5, \quad c = 2, \\
+\Delta &= b^2 - 4ac \\
+  &= (-5)^2 - 4 \times 2 \times 2 \\
+  &= 25 - 16 \\
+  &= 9, \\
+x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+  &= \frac{-(-5) \pm \sqrt{9}}{2 \times 2} \\
+  &= \frac{5 \pm 3}{4}, \\
+x_1 &= \frac{5 + 3}{4} = 2, \ 
+x_2 = \frac{5 - 3}{4} = \frac{1}{2}.
+\end{align*}
+\end{minipage}
+
+\end{multicols}
+
+\end{solution}
+
+通过例题，我们可以得出使用求根公式解一元二次方程的步骤：
+\begin{enumerate}
+    \item 列出二次项系数、一次项系数、常数项
+    \item 计算判别式的值判断根的情况
+    \item 使用对应公式
+\end{enumerate}
+\par
+别忘了我们解高次方程的基本思路是降次，在用求根公式解方程时虽然没有体现降次这个步骤，但求根公式由配方法推导而来，降次步骤已经包含其中.
+\begin{exercise}
+\setlength{\parindent}{0pt} % 取消段落缩进
+\setlength{\columnseprule}{0.01pt}
+\begin{multicols}{2}
+    (1)用公式法解下列方程：
+    \begin{enumerate}
+        \item \(3x^2-2x-2=0\)
+        \item \(\dfrac{1}{2}x^2-5x+4=0\)
+        \item \(2x^2-3(x+1)=0\)
+        \item \((x+3)(x-1)=3\)
+    \end{enumerate}
+    (2)已知关于\(x\)的一元二次方程方程\(x^2-(m+2)x+2m=0\).\\
+    1.求证：无论\(m\)取任何实数，方程总有实数根\\
+    2.若等腰三角形的一边长为3，另外两边长恰好是这个方程的两个根，求\(m\)的值.
+\end{multicols}
+\end{exercise}
+
+\subsection{因式分解法}
+
+\begin{property}
+    零因子法则：如果两个因式的乘积是0，则这两个因式至少有一个等于0；反之，如果两个因式中任意一个为0，他们的乘积为0
+\end{property}
+
+根据这一性质，假设有关于\(x\)的一元二次方程\((x+1)(x-1)=0\)则\((x+1)，(x-1)\)之中至少有一个为0，那么令这两个因式分别为0就可以得到两个一元一次方程，将二次问题转化为了一次问题，达到了降次的目的，只需要分别分别解出两个一次方程就可以得到方程的根，以下是过程：
+\begin{align*}
+    (x+1)(x-1)=0
+\end{align*}
+\begin{solution}
+    \begin{align*}
+        x+1=0, x-1=0\\
+        解得x_1=-1,x_2=1\\
+    \end{align*}
+\end{solution}
+相较于前面的方法，使用零因子法则降次的过程更加简洁，但是你是否注意到了，前面在学习配方法解一元二次方程的时候我们提到过，我们将方程化为\((x+n)^2=p\)的形式后降次，此时p的值会影响根的情况，在学习用求根公式解方程的时候，我们使用判别式判断根的情况，但在这里似乎省略了判断根的情况？表面上看来确实是这样，不需要判断根的情况是使用因式分解法的优势也是它的过程更简洁的原因，那么根的情况又由什么决定呢？
+\par
+实际上根的情况由这两个因式决定，假设有关于\(x\)的方程\((x+m)(x+n)\)，如果两个因式化成的两个方程的解都在实数范围内，实际上这个方程就有两个实数根，如果\(m=n\)或者一个解不在实数范围内另一个解在实数范围内，原方程有两个相等的实数根，如果两个解都不在实数范围内，也就是说原方程无实数根. 这段话理解即可，在实际做题中我们要发挥因式分解法最大的优势就是在解题过程中不用思考根的情况.
+
+在八年级我们学习过用提公因式（提取式子中的最大公因式）和乘法公式（平方差公式或完全平方公式）来因式分解，因式分解是指将一个多项式表示为若干个不可约多项式的乘积形式的过程
+\par
+实际上一元二次方程可以理解为是一个多项式方程，所以我们也可以对一元二次方程进行因式分解，得到形似\((x+m)(x-n)=0\)的结构，再运用零因子法则，分别得到两个方程，直接解即可得到答案：
+
+\begin{enumerate}
+    \item 对方程因式分解
+    \item 拆解成两个方程，直接计算出结果
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%未完工，十字相乘法
+\begin{example}
+    用因式分解法解方程：(1) \((x-3)^2-49=0\). (2) \((5x-3)^2+2(3-5x)=0\).
+\end{example}
+
+\begin{solution}
+\begin{multicols}{2}
+(1) \((x-3)^2-49=0\)：
+\begin{align*}
+(x-3)^2 - 49 &= 0 \\
+(x-3)^2 &= 49 \\
+x-3 &= \pm 7 \\
+x &= 3 \pm 7, \\
+x_1 &= 3 + 7 = 10, \\
+x_2 &= 3 - 7 = -4.
+\end{align*}
+
+(2) \((5x-3)^2+2(2-5x)=0\)：
+\begin{align*}
+(5x-3)^2 + 2(3-5x) &= 0 \\
+(5x-3)^2 - 2(5x-3) &= 0 \\
+(5x-3)\left[(5x-3) - 2\right] &= 0 \\
+(5x-3)(5x-5) &= 0 \\
+5x-3 = 0 \quad &\text{或} \quad 5x-5 = 0, \\
+x_1 &= \frac{3}{5}, \\
+x_2 &= 1.
+\end{align*}
+\end{multicols}
+\end{solution}
+
+设二次三项式为 $ax^2 + bx + c$，若能分解为 $(px + q)(rx + s)$，则需满足：
+\begin{align*}
+pr = a，
+qs = c，ps + qr = b
+\end{align*}
+该方法通过交叉相乘验证系数的匹配关系，称为十字相乘法.
+\par
+并不是所有一元二次方程都可以使用十字相乘法因式分解，这时候就要灵活使用其他方法解方程.
