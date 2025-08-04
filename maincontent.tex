@@ -13,6 +13,7 @@
 \usepackage{etoolbox}
 \usepackage{amsmath}  % 提供数学公式支持
 \usepackage{array}    % 提供更强大的表格功能
+\usepackage{wrapfig}
 \setcounter{tocdepth}{2}
 
 \title{九年级数学讲义（人教版）}
@@ -83,47 +84,23 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 
-\begin{introduction}
-
-\item 将一元二次方程整理为一般形式
-\item 判定一元二次方程
-\item 熟练掌握配方
-\item 用配方解决极值问题
-\item 用不同方式解一元二次方程
-\item 熟练掌握韦达定理
-\item 会解决特殊根问题
-
-\end{introduction}
-
-经过本章的学习，你至少需要掌握以上的内容，在完成学习后你可以根据习题的情况，对照上面的学习目标，检验自己的学习成果.
 %一元二次方程-基本
 \input{QE_basics}
 %配方
 \input{completing_the_square}
 %解一元二次方程
 \input{solve_QE}
-\section{一元二次方程的根}
+%韦达定理(根与系数的关系)
+\input{QE_Vietas_formulas}
+%一元二次方程的根
+\input{QE_root}
+%一元二次方程与实际问题
+\input{QE_practical_problems}
 
-前面学习如何解方程，本节讲解方程的根相关内容，1.4.1的内容虽然在课本上是选学内容，但是依旧非常重要
-
-\subsection{韦达定理（根与系数的关系）}
-
-\subsection{有理数根与整数根}
-
-\subsection{公共根}
-\section{综合练习（1.1-1.4）}
-
-
-
-
-
-\section{一元二次方程与实际问题}
 
 \section{一元二次方程与几何}
 
 \section{有关一元二次方程的新定义}
-
-\section{综合练习（1.5-1.7）}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,6 +110,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 \input{QF_basics}
 %二次函数的形式和图像性质
 \input{QF_form&graph_properties}
+
 \section{求二次函数解析式}
 
 \section{二次函数区间最值}
@@ -146,7 +124,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 \subsection*{有关商品利润}
 
 \subsection*{有关抛物线形状}
-
+%%%%%%二次函数与几何
 \input{QF&Geometry}
 %_______________________________________________________________________________________________________________________________________________
 \chapter{旋转}
