@@ -11,15 +11,33 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 \usepackage{etoolbox}
+\usepackage{yhmath}
 \usepackage{amsmath}  % 提供数学公式支持
 \usepackage{array}    % 提供更强大的表格功能
 \usepackage{wrapfig}
 \setcounter{tocdepth}{2}
-
+\usetikzlibrary{shapes,arrows}
 \title{九年级数学讲义（人教版）}
 
+\usepackage{xparse}
+\usepackage{expl3} % 用于字符串处理
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=cyan,
+}
 
-
+\newcommand{\exas}[2]{%
+\begin{example}
+#1
+\begin{solution}
+#2
+\end{solution}
+\end{example}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -27,23 +45,96 @@
 
 \chapter*{前言}
 
-\section*{说明}
+\section*{使用}
 
-讲义根据改版前的人教数学课本编写，所有内容都在中考范围内，编者在广东参加中考所以优先考虑的是广东中考情况，可以说大部分知识点讲义里面都有讲解，章节和内容的编排都为了学习思路服务，没有区分重点和非重点（因为都需要好好掌握），也没有区分难易（但是大部分内容都做了详细讲解，适合大部分学生学习），编者对部分内容做了重新编排、补充，应该能让读者获得更顺畅的学习体验.
-
-\section*{更新维护/反馈建议}
-
-尽量快地更新讲义，讲解视频会随后更新，比讲义慢. 编者不定期修订讲义，如果你发现了错误或者建议请联系我勘误及修订（不更新新版教材内容），非常感谢！
+电子版PDF点击目录跳转对应章节，跳转后对应章节的标题一般出现在页面最上方．打印自行删除前言．其他声明见后记
 
 
-\section*{获取配套资料}
-
-\begin{enumerate}
-    \item 讲义所有练习题目（有答题空间）+解析
-\end{enumerate}
 
 
-\section*{其他}
+\tableofcontents
+
+
+
+\chapter{一元二次方程}
+
+
+
+%一元二次方程-基本
+\input{QE_basics}
+%配方
+\input{completing_the_square}
+%解一元二次方程
+\input{solve_QE}
+%韦达定理(根与系数的关系)
+\input{QE_Vietas_formulas}
+%一元二次方程的根
+\input{QE_root}
+%一元二次方程与实际问题
+\input{QE_practical_problems}
+
+\section{有关一元二次方程的新定义}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{二次函数}
+%二次函数基本
+\input{QF_basics}
+%二次函数的形式和图像性质
+\input{QF_form&graph_properties}
+%二次函数区间最值
+\input{QF_interval_extrema}
+
+%二次函数交点
+\input{QF_intersection_point}
+
+%二次函数实际问题
+\input{QF_practical_problems}
+
+%%%%%%二次函数与几何
+\input{QF&Geometry}
+%_______________________________________________________________________________________________________________________________________________
+\chapter{旋转}
+
+\section{旋转基本}
+
+\subsection{旋转的性质}
+
+我们把一个平面图形绕着平面内某一点\(O \)转动一个角度，叫做图形的旋转，点\(O \)叫做旋转中心，转动的角叫做旋转角 . 如果图形上的点\(P \)经过旋转变为点\(P' \)，那么这两个点叫做这个旋转的对应点.
+
+\begin{example}
+    如下图，在\(Rt\triangle ABC \)中，\(\angle ABC = 90^\circ \)，\(AB=BC=\sqrt{2}\),将\(\triangle ABC\)绕点\(C\)逆时针旋转\(60^\circ\)，得到\(\triangle MNC\)，连接\(BM\)，则\(BM\)的长是 \underline{\hspace{3em}}
+    
+\begin{figure}[h]
+    \raggedright
+    \includegraphics[width=0.25\linewidth]{figure/example_rotation1.jpg}
+    
+    \label{fig:enter-label}
+\end{figure}
+    
+\end{example}
+
+
+
+\chapter{圆}
+
+
+\input{C_Basic}
+
+
+\chapter*{后记}
+
+\section*{建议}
+
+建议在有实体人教教材配套使用．为了更加契合试题和方便理解，对部分章节的顺序做了调整，增加了一些章节．建议购买《初中5星学霸九年级数学RJ》和《实验班提优训练数学九年级上RMJY》，因为讲义中大部分题目来源于这两本书．由于讲义中的例题题目和解析比较近，建议自行遮住解析先做一遍例题．
+
+\section*{勘误/修订日志}
+
+
+
+\section*{声明}
+部分例题和习题摘自《初中5星学霸九年级数学RJ》、《实验班提优训练数学九年级上RMJY》及部分来自互联网公开的免费资料
 
 本讲义已经开源（地址：https://github.com/LanDiaoCha/Grade9-Maths-Lecture-Notes-PEP?tab=BSD-3-Clause-1-ov-file），请遵守协议内容，共同维护开源社区：禁止删除或修改原始版权声明和许可证文本、禁止未经许可使用版权所有者名称进行背书、禁止移除免责声明.
 \par
@@ -75,80 +166,5 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-\tableofcontents
-
-
-
-\chapter{一元二次方程}
-
-
-
-%一元二次方程-基本
-\input{QE_basics}
-%配方
-\input{completing_the_square}
-%解一元二次方程
-\input{solve_QE}
-%韦达定理(根与系数的关系)
-\input{QE_Vietas_formulas}
-%一元二次方程的根
-\input{QE_root}
-%一元二次方程与实际问题
-\input{QE_practical_problems}
-
-
-\section{一元二次方程与几何}
-
-\section{有关一元二次方程的新定义}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\chapter{二次函数}
-%二次函数基本
-\input{QF_basics}
-%二次函数的形式和图像性质
-\input{QF_form&graph_properties}
-
-\section{求二次函数解析式}
-
-\section{二次函数区间最值}
-%二次函数交点
-\input{QF_intersection_point}
-\section{二次函数实际问题}
-
-
-\subsection*{有关图形}
-
-\subsection*{有关商品利润}
-
-\subsection*{有关抛物线形状}
-%%%%%%二次函数与几何
-\input{QF&Geometry}
-%_______________________________________________________________________________________________________________________________________________
-\chapter{旋转}
-
-\section{旋转基本}
-
-\subsection{旋转的性质}
-
-我们把一个平面图形绕着平面内某一点\(O \)转动一个角度，叫做图形的旋转，点\(O \)叫做旋转中心，转动的角叫做旋转角 . 如果图形上的点\(P \)经过旋转变为点\(P' \)，那么这两个点叫做这个旋转的对应点.
-
-\begin{example}
-    如下图，在\(Rt\triangle ABC \)中，\(\angle ABC = 90^\circ \)，\(AB=BC=\sqrt{2}\),将\(\triangle ABC\)绕点\(C\)逆时针旋转\(60^\circ\)，得到\(\triangle MNC\)，连接\(BM\)，则\(BM\)的长是 \underline{\hspace{3em}}
-    
-\begin{figure}[h]
-    \raggedright
-    \includegraphics[width=0.25\linewidth]{figure/example_rotation1.jpg}
-    
-    \label{fig:enter-label}
-\end{figure}
-    
-\end{example}
-
-
-
-\chapter{圆}
 
 \end{document}

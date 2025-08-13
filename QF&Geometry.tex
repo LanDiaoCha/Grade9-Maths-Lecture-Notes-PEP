@@ -7,7 +7,7 @@
 \subsubsection*{平移}
 还记得平移运动吗？简单回顾：平移是全等的几何变换（平移前和平移后的图形全等），平移具有交换性（比如一个正方形先向上平移3个单位再向左平移3个单位，如果颠倒顺序，最终位置相同）和可逆性（平移后可以通过反向平移回到原位置）．
 \par
-对二次函数平移其实就是\textbf{对二次函数的顶点平移}，进行任何平移操作前需要先把二次函数化为顶点式以方便操作．
+对二次函数平移其实就是\textbf{对二次函数的顶点平移}（请回顾小节\ref{subsetionL:topponit}-顶点式），进行任何平移操作前需要先把二次函数化为顶点式以方便操作．
 \par
 假设有\(y=a(x-h)^2\)，若\(h>0\)则函数向左平移，若\(h<0\)则函数向右平移,都是平移\(|h|\)个单位；假设有\(y=ax^2+k\)，若\(k>0\)则函数向上平移，若\(k<0\)则函数向下平移,都是平移\(|k|\)个单位．两者一起进行就是顶点式\(y=a(x-h)^2+k\)．
 \par
@@ -25,7 +25,7 @@
 \end{solution}
 以上是抛物线沿坐标轴方向平移的例子，如果沿斜向（即直线）平移呢？这时候只要知道平移的距离和直线的解析式，过移动后的顶点做垂线，垂直于坐标轴，就能\textbf{构造一个直角三角形}．根据直线解析式，\textbf{设移动后顶点的坐标}，顶点的横纵坐标值就是三角形直角边的长，最后通过\textbf{勾股定理}就能得出移动后顶点的坐标．
 \begin{example}
-    将抛物线 \( y = x^2 \) 沿直线 \( y = 3x \) 方向移动 \(\sqrt{10}\) 个单位长度，若移动后抛物线的顶点在第一象限，则移动后抛物线的解析式是\underline{\hspace{4em}}。
+    将抛物线 \( y = x^2 \) 沿直线 \( y = 3x \) 方向移动 \(\sqrt{10}\) 个单位长度，若移动后抛物线的顶点在第一象限，则移动后抛物线的解析式是\underline{\hspace{4em}}．
 \end{example}
 \begin{solution}
     分析：该二次函数沿一条直线移动，没有指定移动的方向，但题目要求移动后二次函数的顶点在第一象限，因为该直线（正比例函数）的斜率为\(3>0\)，\(x>0\)时\(y\)随\(x\)的增大而增大，所以只有在二次函数往右上方移动时才符合题意（可以画草图辅助理解，如图\ref{fig:move1}），此时根据正比例函数可以设移动后的坐标为\((m,3m)\)，再作\(BA\)垂直于\(x\)轴，原点为点\(C\)，移动后的定点坐标为\(B\)，\(BA=3m,CA=m,CB=\sqrt{10}\)，利用勾股定理即可求出移动后的顶点坐标，根据顶点坐标列成顶点式再化为一般式即可．
@@ -91,7 +91,7 @@
     \setlength{\parindent}{0pt} % 取消段落缩进
     \setlength{\columnseprule}{0.01pt}
     \begin{multicols}{2}
-    (1)如题图1,在平面直角坐标系中,已知点 \( A \) 坐标为 \((2,4)\),直线 \( x=2 \) 与 \( x \) 轴相交于点 \( B \),连接 \( OA \),二次函数 \( y=x^2 \) 图象从点 \( O \) 沿 \( OA \) 方向平移,与直线 \( x=2 \) 交于点 \( P \),顶点 \( M \) 到 \( A \) 点时停止移动。
+    (1)如题图1,在平面直角坐标系中,已知点 \( A \) 坐标为 \((2,4)\),直线 \( x=2 \) 与 \( x \) 轴相交于点 \( B \),连接 \( OA \),二次函数 \( y=x^2 \) 图象从点 \( O \) 沿 \( OA \) 方向平移,与直线 \( x=2 \) 交于点 \( P \),顶点 \( M \) 到 \( A \) 点时停止移动．
     %\begin{figure}[h]
         %\centering
         
@@ -105,11 +105,11 @@
 
 
 
-    (2)已知抛物线 \( y = ax^2 - 2ax - 8 \ (a \neq 0) \)，若将该函数先向左平移 1 个单位，再向上平移 9 个单位，顶点恰好落在原点上。
+    (2)已知抛物线 \( y = ax^2 - 2ax - 8 \ (a \neq 0) \)，若将该函数先向左平移 1 个单位，再向上平移 9 个单位，顶点恰好落在原点上．
 
     \begin{enumerate}
         \item 求抛物线的函数解析式和顶点坐标；
-        \item 若有一直线 \( l \) 与抛物线交于点 \( A(-3, m) \)，\( B(n, 16) \)，且 \( n > 0 \)。若点 \( P \) 在抛物线上且在直线 \( l \) 下方，且点 \( P \) 不与点 \( A, B \) 重合，分别求出点 \( P \) 横坐标与纵坐标的取值范围。
+        \item 若有一直线 \( l \) 与抛物线交于点 \( A(-3, m) \)，\( B(n, 16) \)，且 \( n > 0 \)．若点 \( P \) 在抛物线上且在直线 \( l \) 下方，且点 \( P \) 不与点 \( A, B \) 重合，分别求出点 \( P \) 横坐标与纵坐标的取值范围．
     \end{enumerate}
     
     \end{multicols}
@@ -129,55 +129,71 @@
 
 \subsubsection*{轴对称}
 
-还记得轴对称吗？简单回顾：轴对称是全等的几何变换（对称前后的图形全等），轴对称具有自反性（一个图形关于某直线对称后，再对同一条直线对称一次，图形就会回到原来的位置）。例如，一个等腰三角形沿着它的高线对称后，再对同一条高线对称一次，就恢复成原来的等腰三角形．此外，对称轴上的任意一点到图形对应点的距离相等．
+还记得轴对称吗？简单回顾：轴对称是全等的几何变换（对称前后的图形全等），轴对称具有自反性（一个图形关于某直线对称后，再对同一条直线对称一次，图形就会回到原来的位置）．例如，一个等腰三角形沿着它的高线对称后，再对同一条高线对称一次，就恢复成原来的等腰三角形．此外，对称轴上的任意一点到图形对应点的距离相等．
 \par
 
-\noindent
-\begin{minipage}{1\linewidth}
+对抛物线翻折，题目考察的一般有两种：关于坐标轴对称、关于某一直线对称
+
     \begin{wrapfigure}{r}{3cm}
-    \vspace{-1cm}
-    \hspace{-1.4cm}
-    \centering
-    \begin{center}
-    \centering
-        \begin{tikzpicture}[
-            scale=0.45,
-            declare function={
-                func(\x) = -3*(\x+1)^2 + 3;
-                func2(\x) = -3*(-\x+1)^2 + 3;
-                func3(\x) = \x -2.5;
-            }
-        ]
-            \draw[->, thick] (-2.7, 0) -- (4, 0) node[right] {$x$};
-            \draw[->, thick] (0, -4) -- (0, 4) node[above] {$y$};
+        \begin{center}
+            \begin{tikzpicture}[
+                scale=0.45,
+                declare function={
+                    func(\x) = -3*(\x+1)^2 + 3;
+                    func2(\x) = -3*(-\x+1)^2 + 3;
+                    func3(\x) = \x -2.5;
+                }
+            ]
+                \draw[->, thick] (-2.7, 0) -- (4, 0) node[right] {$x$};
+                \draw[->, thick] (0, -4) -- (0, 4) node[above] {$y$};
+            
+                \draw[domain=-2.3:0, smooth, thick, variable=\x] plot ({\x}, {func(\x)});
+                \pgfmathsetmacro{\xleft}{-2.3}
+                \pgfmathsetmacro{\yleft}{func(\xleft)}
+                % 在左侧端点右侧添加y₁标记
+                \filldraw (\xleft,\yleft) circle (0pt);
+                \node[left] at (\xleft,\yleft) {$y_1$};
+            
+                
+                \draw[domain=0:2.3, smooth, thick, variable=\x] plot ({\x}, {func2(\x)});
+                \pgfmathsetmacro{\xleft}{2.3}
+                \pgfmathsetmacro{\yleft}{func2(\xleft)}
+                % 在左侧端点右侧添加y₁标记
+                \filldraw (\xleft,\yleft) circle (0pt);
+                \node[right] at (\xleft,\yleft) {$y_2$};
+                
+                \draw[domain=-1:4, smooth, thick, variable=\x] plot ({\x}, {func3(\x)});
+                \pgfmathsetmacro{\xleft}{3.5}
+                \pgfmathsetmacro{\yleft}{func3(\xleft)+0.5}
+                % 在左侧端点右侧添加y₁标记
+                \filldraw (\xleft,\yleft) circle (0pt);
+                \node[above] at (\xleft,\yleft) {$y=x+b$};
+                
+            \end{tikzpicture}
+            例题图
+        \end{center}
+        \end{wrapfigure}
+
+    \noindent
+    \begin{example}
         
-            \draw[domain=-2.3:0, smooth, thick, variable=\x] plot ({\x}, {func(\x)});
-            \pgfmathsetmacro{\xleft}{-2.3}
-            \pgfmathsetmacro{\yleft}{func(\xleft)}
-            % 在左侧端点右侧添加y₁标记
-            \filldraw (\xleft,\yleft) circle (0pt);
-            \node[left] at (\xleft,\yleft) {$y_1$};
+        如右图，函数 \( y_1 = -a(x+1)^2 + 3 \) (\( x < 0 \)) 的图象过原点，将其沿 \( y \) 轴翻折，得到函数 \( y_2 \) 的图象，把函数 \( y_1 \) 与 \( y_2 \) 的图象合并后称为函数 \( L \) 的图象．
         
-            
-            \draw[domain=0:2.3, smooth, thick, variable=\x] plot ({\x}, {func2(\x)});
-            \pgfmathsetmacro{\xleft}{2.3}
-            \pgfmathsetmacro{\yleft}{func2(\xleft)}
-            % 在左侧端点右侧添加y₁标记
-            \filldraw (\xleft,\yleft) circle (0pt);
-            \node[right] at (\xleft,\yleft) {$y_2$};
-            
-            \draw[domain=-1:4, smooth, thick, variable=\x] plot ({\x}, {func3(\x)});
-            \pgfmathsetmacro{\xleft}{3.5}
-            \pgfmathsetmacro{\yleft}{func3(\xleft)+0.5}
-            % 在左侧端点右侧添加y₁标记
-            \filldraw (\xleft,\yleft) circle (0pt);
-            \node[above] at (\xleft,\yleft) {$y=x+b$};
-            
-        \end{tikzpicture}
-        例题图
-    \end{center}
-    \vspace{0.7cm}
-        \begin{tikzpicture}[
+        \begin{enumerate}
+            \item \( a \) 的值为\underline{\hspace{3.5em}}；函数 \( y_2 \) 的解析式为\underline{\hspace{3.5em}}（注明 \( x \) 的取值范围）；
+            \item 当直线 \( y = x + b \) 与函数 \( L \) 的图象有 3 个公共点时，求 \( b \) 的值．
+        \end{enumerate}
+        \begin{solution}
+        
+    \begin{enumerate}
+    \item 分析:第一空求\(a\)，观察解析式只有一个参数，所以只需要找出一个点就可以求\(y_1\)解析式和\(a\)的值，阅读题目得知\(y_1\)过原点即\((0,0)\)，将\(x=0,y=0\)代入原解析式即可求出\(a\)的值，第二空求\(y_2\)的值，即求将\(y_1\)沿\(y\)轴翻折的解析式，只需改变\(y_1\)解析式的\(x\)为\(-x\)即可，最后注意标注自变量的取值范围．
+    \item 分析:画草图分析(如右两小图)，上下平移直线\(y=x+b\)发现只有两种情况与函数Ｌ有三个公共点，第一种：已知函数Ｌ过原点，当直线\(y=x+b\)也过原点（即\(b=0\)时），满足条件，第二种：直线\(y=x+b\)与函数Ｌ的\(y_2\)部分只有一个交点（即相切）的时候符合条件，此时要计算参数\(b\)的值需要结合前面学习抛物线交点相关问题的知识点，抓住直线与抛物线\(y_2\)只有一个交点这一条件，将二次函数\(y_2\)与一次函数\(y=x+b\)的解析式联立，得到一个含参数\(b\)的一元二次方程，因为只有一个交点所以该方程的判别式等于0，即\(\Delta=0\)，依据判别式列出一个含参数\(b\)的方程，解方程就能得到第二种情况\(b\)的值．
+    \end{enumerate}
+    \end{solution}
+    \end{example}
+    \begin{wrapfigure}{r}{4cm}
+    \subfigure[]{
+    \begin{tikzpicture}[
             scale=0.25,
             declare function={
                 func(\x) = -3*(\x+1)^2 + 3;
@@ -193,7 +209,7 @@
             \node[left] at (\xleft,\yleft) {$y_1$};
         
             
-            \draw[domain=0:2.3, smooth, thick, variable=\x] plot ({\x}, {func2(\x)});
+            \draw[domain=0:2.6, smooth, thick, variable=\x] plot ({\x}, {func2(\x)});
             \pgfmathsetmacro{\xleft}{2.3}
             \pgfmathsetmacro{\yleft}{func2(\xleft)}
             % 在左侧端点右侧添加y₁标记
@@ -203,8 +219,8 @@
             \draw[domain=-3.2:2.5, smooth, thick, variable=\x] plot ({\x}, {func3(\x)});
             
         \end{tikzpicture}
-        
-        \begin{tikzpicture}[
+    }\subfigure[]{
+    \begin{tikzpicture}[
             scale=0.25,
             declare function={
                 func(\x) = -3*(\x+1)^2 + 3;
@@ -212,7 +228,7 @@
                 func3(\x) = \x + 25/12;
             }
         ]
-            \draw[domain=-2.3:0, smooth, thick, variable=\x] plot ({\x}, {func(\x)});
+            \draw[domain=-2.6:0, smooth, thick, variable=\x] plot ({\x}, {func(\x)});
             \pgfmathsetmacro{\xleft}{-2.3}
             \pgfmathsetmacro{\yleft}{func(\xleft)}
             % 在左侧端点右侧添加y₁标记
@@ -220,7 +236,7 @@
             \node[left] at (\xleft,\yleft) {$y_1$};
         
             
-            \draw[domain=0:2.3, smooth, thick, variable=\x] plot ({\x}, {func2(\x)});
+            \draw[domain=0:2.6, smooth, thick, variable=\x] plot ({\x}, {func2(\x)});
             \pgfmathsetmacro{\xleft}{2.3}
             \pgfmathsetmacro{\yleft}{func2(\xleft)}
             % 在左侧端点右侧添加y₁标记
@@ -230,49 +246,88 @@
             \draw[domain=-3.2:2.5, smooth, thick, variable=\x] plot ({\x}, {func3(\x)});
             
         \end{tikzpicture}
+    }
+    
     \end{wrapfigure}
-
-    \begin{example}
-        
-        如右图，函数 \( y_1 = -a(x+1)^2 + 3 \) (\( x < 0 \)) 的图象过原点，将其沿 \( y \) 轴翻折，得到函数 \( y_2 \) 的图象，把函数 \( y_1 \) 与 \( y_2 \) 的图象合并后称为函数 \( L \) 的图象．
-        
-        \begin{enumerate}
-            \item \( a \) 的值为\underline{\hspace{3.5em}}；函数 \( y_2 \) 的解析式为\underline{\hspace{3.5em}}（注明 \( x \) 的取值范围）；
-            \item 当直线 \( y = x + b \) 与函数 \( L \) 的图象有 3 个公共点时，求 \( b \) 的值．
-        \end{enumerate}
-        
-    \end{example}
-
-    \begin{solution}
-    \begin{enumerate}
-    \item 分析:第一空要求\(a\)，观察解析式只有一个参数，所以只需要找出一个点就可以求\(y_1\)解析式和\(a\)的值，阅读题目得知\(y_1\)过原点即\((0,0)\)，将\(x=0,y=0\)代入原解析式即可求出\(a\)的值，第二空要求\(y_2\)的值，即求将\(y_1\)沿\(y\)轴翻折的解析式，只需改变\(y_1\)解析式的\(x\)为\(-x\)即可，最后注意标注自变量的取值范围．
-    \item 分析:画草图分析(如右两小图)，上下平移直线\(y=x+b\)发现只有两种情况与函数Ｌ有三个公共点，第一种：已知函数Ｌ过原点，当直线\(y=x+b\)也过原点（即\(b=0\)时），满足条件，第二种：直线\(y=x+b\)与函数Ｌ的\(y_2\)部分只有一个交点（即相切）的时候符合条件，此时要计算参数\(b\)的值需要结合前面学习抛物线交点相关问题的知识点，抓住直线与抛物线\(y_2\)只有一个交点这一条件，将二次函数\(y_2\)与一次函数\(y=x+b\)的解析式联立，得到一个含参数\(b\)的一元二次方程，因为只有一个交点所以该方程的判别式等于0，即\(\Delta=0\)，依据判别式列出一个含参数\(b\)的方程，解方程就能得到第二种情况\(b\)的值．
-    \end{enumerate}
-    \end{solution}
-
-\end{minipage}
+    
+所以
 
 
 
 
 
-
-\subsection{设参思想（点参、线参）}
-
-在学习一次函数时，我们就接触过设参，设参思想是处理二次函数综合问题的核心代数化策略，其本质是通过引入辅助变量（称为参数）将几何动态问题转化为可计算的代数模型。当抛物线上的点$P$位置变化时，设其横坐标为参数$t$，根据二次函数解析式 $y = ax^2 + bx + c$，点$P$的纵坐标可直接用含$t$的代数式表示为：
-\[
-y = a \cdot t^2 + b \cdot t + c
-\]
-此时点$P$的完整坐标可记为：
-\[
-P(t,\  at^2 + bt + c)
-\]．该操作的数学意义在于：
-\begin{itemize}
-    \item 将连续运动的点转化为连续变化的参数．
-    \item 通过特定条件控制参数的取值，用于描述几何关系
-\end{itemize}
+\input{QF_set_parameters}
 
 \subsection{二次函数与\textbf{线段}}
+
+处理有关线段的问题，常常需要用到距离公式．
+
+\begin{theorem}
+设平面直角坐标系中两点 \( A(x_1,y_1) \) 和 \( B(x_2,y_2) \)，则两点间距离 \( d \) 满足：
+\[
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}．
+\]
+\end{theorem}
+
+
+\begin{wrapfigure}{r}{4cm}
+    \begin{tikzpicture}[scale=0.7]
+    % 坐标系
+    \draw[->,thick] (-0.5,0) -- (5,0) node[right]{$x$};
+    \draw[->,thick] (0,-0.5) -- (0,3) node[above]{$y$};
+    
+    % 标记点A和B
+    \coordinate (A) at (1,1);
+    \coordinate (B) at (3,2.5);
+    \coordinate (C) at (3,1);
+    
+    % 绘制直角三角形
+    \draw[thick] (A) -- (B) -- (C) -- cycle;
+    \draw[dashed] (A) -- (C) node[midway,below]{$|x_2 - x_1|$};
+    \draw[dashed] (B) -- (C) node[midway,right]{$|y_2 - y_1|$};
+    
+    % 标注点
+    \filldraw (A) circle (1.5pt) node[below left]{$A(x_1,y_1)$};
+    \filldraw (B) circle (1.5pt) node[above right]{$B(x_2,y_2)$};
+    \filldraw (C) circle (1.5pt) node[below right]{$C(x_2,y_1)$};
+    
+    % 标注斜边
+    \node at ($(A)!0.5!(B)$) [above=5pt] {$d$};
+    \end{tikzpicture}
+    \caption{距离公式证明}
+\end{wrapfigure}
+\begin{proof}
+
+
+
+\begin{enumerate}
+\item \textbf{构造直角三角形}：
+过点 \( A \) 作水平线，过点 \( B \) 作垂直线，两线交于点 \( C(x_2,y_1) \)，形成直角三角形 \( \triangle ABC \)．
+
+\item \textbf{确定直角边长度}：
+\begin{align*}
+\text{水平直角边 } AC &= |x_2 - x_1|，\\
+\text{垂直直角边 } BC &= |y_2 - y_1|．
+\end{align*}
+
+\item \textbf{应用勾股定理}：
+在 \( \triangle ABC \) 中，斜边 \( AB \) 满足：
+\[
+AB^2 = AC^2 + BC^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2．
+\]
+
+\item \textbf{推导距离公式}：
+两边取算术平方根（距离 \( d > 0 \)）即得：
+\[
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}．\quad
+\]
+\end{enumerate}
+\end{proof}
+\begin{remark}
+当两点在平行于坐标轴的直线上时，公式退化为绝对值形式（如 \( d = |x_1 - x_2| \)或\( d = |y_1 - x_2| \)）．
+\end{remark}
+
+当前阶段有关线段的题目有求线段值、证明或运用线段关系、线段最值问题．学习本节需要具有良好的几何基础，本节主要以练习为主．
 
 \subsubsection*{线段值}
 \noindent
@@ -339,7 +394,7 @@ P(t,\  at^2 + bt + c)
 
     \begin{example}
         
-        如图，在平面直角坐标系中，直线 \( y = x + 2 \) 与坐标轴交于 \( A \)，\( B \) 两点，点 \( A \) 在 \( x \) 轴上，点 \( B \) 在 \( y \) 轴上，点 \( C \) 的坐标为（1，0），抛物线 \( y = -x^2-x + 2 \) 经过点 \( A \)，\( B \)，\( C \)．若点 \( P \) 是抛物线上一动点，且在直线 \( AB \) 上方，过点 \( P \) 作 \( AB \) 的垂线段，垂足为点 \( Q \)。当 \( PQ = \dfrac{\sqrt{2}}{2} \) 时，求点 \( P \) 的坐标．
+        如图，在平面直角坐标系中，直线 \( y = x + 2 \) 与坐标轴交于 \( A \)，\( B \) 两点，点 \( A \) 在 \( x \) 轴上，点 \( B \) 在 \( y \) 轴上，点 \( C \) 的坐标为（1，0），抛物线 \( y = -x^2-x + 2 \) 经过点 \( A \)，\( B \)，\( C \)．若点 \( P \) 是抛物线上一动点，且在直线 \( AB \) 上方，过点 \( P \) 作 \( AB \) 的垂线段，垂足为点 \( Q \)．当 \( PQ = \dfrac{\sqrt{2}}{2} \) 时，求点 \( P \) 的坐标．
         
     \end{example}
 
@@ -352,8 +407,82 @@ P(t,\  at^2 + bt + c)
 \end{minipage}
 
 \subsubsection*{线段关系}
+线段关系一般有数量关系，位置关系（垂直，平行），当提供线段关系等信息时需要运用几何的知识思考问题．
+\begin{example}
+如图\ref{fig:g1}，已知抛物线 \( y = -x^2 + mx + 3 \) 与 \( x \) 轴交于 \( A, B \) 两点，与 \( y \) 轴交于点 \( C \)，点 \( B \) 的坐标为 \((3,0)\)．
+\noindent
+\begin{enumerate}
+    \item 求抛物线的解析式；
+    \item 若点 \( P \) 是直线 \( BC \) 上方抛物线上 的动点，过点 \( P \) 作直线 \( MN//y \) 轴，交 \( x \) 轴于点 \( N \)，交直线 \( BC \) 于点 \( M \)．设点 \( P \) 的横坐标为 \( t \)，当 \( PN = 2PM \) 时，求点 \( P \) 的坐标．
+\end{enumerate}
+\begin{wrapfigure}{r}{7cm}
+    \vspace{-1cm}
+    \includegraphics[width=1\linewidth]{figure/g1.png}
+    \caption{}
+    \label{fig:g1}
+\end{wrapfigure}
+
+\begin{solution}
+    分析：（1）要求二次函数的解析式，题目给出的抛物线只有一个参数，又已知抛物线上点\(B(3,0)\)，代入坐标即可求出解析式．得到解析式为\(y=-x^2+2x+3\)
+    
+    （2）画草图（如图\ref{fig:g2}），题目给出条件\( PN = 2PM \)，所以需要先表示出\(P,M,N\)三点的坐标（\(P(t, -t^2+2t+3), M(t, -t+3), N(t, 0)\)），然后计算线段长，再代入关系式．得到关于\(t\)的一元二次方程\(t^2-4t+3=0\)，解为\(t_1=1,t_2=3\),由于题目给\(P\)限定在第一象限，所以\(0<t<3\)，舍去\(t=3\)，最后再把\(t\)代入坐标得出结果\(P(1, 4)\)
+\end{solution}
+
+\end{example}
+
+\begin{wrapfigure}{r}{3cm}
+    \vspace{-1cm}
+    \includegraphics[width=1\linewidth]{figure/g2.png}
+    \caption{}
+    \label{fig:g2}
+\end{wrapfigure}
+
+\begin{remark}
+着重掌握理解题目的能力
+\end{remark}
 
 \subsubsection*{线段最值}
+
+在本阶段，求最值的方法主要有：两点之间线段最短、吹线段最短、三角形三边关系、将军饮马、配方求最值等．需要灵活分析题目，采用合适的方法．
+
+\begin{example}
+如图\ref{fig:g3}，有抛物线\(y=-x^2-2x+3\)．点$P$为抛物线第二象限上一个动点，过点$P$作$y$轴的平行线交$AC$于点$D$，\(A(-3,0), B(1, 0)\)，求线段$PD$的最大值．
+
+\begin{wrapfigure}{r}{3cm}
+\vspace{-1cm}
+    \includegraphics[width=1\linewidth]{figure/g3.png}
+    \caption{}
+    \label{fig:g3}
+\end{wrapfigure}
+
+\begin{solution}
+    分析：由于要求线段\(PD\)，所以先看点再看线，由题目可知\(P\)在抛物线上，\(D\)在直线\(AC\)上（求AC解析式得\(AC:y=x+3\)），题目给出了\(PD//y\)轴，证明\(P\)与\(D\)的横坐标相等，因此设点坐标可以得到两点\(P(m, -m^2-2m+3), D(m, m+3)\)，再利用距离公式得到线段\(PD\)的长，此时得到一个二次多项式\(-m^2-3m\)，对其配方，可以得到\(-(m-\dfrac{3}{2})^2+\dfrac{9}{4}\)，所以当\(m=\dfrac{3}{2}\)时，该线段（多项式）取最大值，最大值为\(\dfrac{9}{4}\)
+\end{solution}
+
+\end{example}
+
+\begin{wrapfigure}{l}{3cm}
+    \includegraphics[width=1.2\linewidth]{figure/g4.png}
+    \caption{}
+    \label{fig:g4}
+\end{wrapfigure}
+
+\vspace{0.5cm}
+\exas
+{
+如图，在平面直角坐标系中，直线 \( y = \dfrac{1}{2}x + 2 \) 与 \( x \) 轴交于点 \( A \)，与 \( y \) 轴交于点 \( C \)。抛物线 \( y = ax^2 + bx + c \) 的对称轴是 \( x = -\dfrac{3}{2} \)，且经过 \( A, C \) 两点，与 \( x \) 轴的另一交点为点 \( B \)。
+
+\begin{enumerate}
+    \item 求二次函数 \( y = ax^2 + bx + c \) 的解析式；
+    \item 点 \( P \) 为线段 \( AB \) 上的动点，求 \( AP+2PC \) 的最小值
+\end{enumerate}
+
+}
+{分析：
+}
+
+
+
 
 \subsection{二次函数与\textbf{面积}}
 
